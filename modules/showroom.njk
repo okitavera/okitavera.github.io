@@ -1,7 +1,7 @@
 <div class="row showroom">
   <div class="col">
     <h2 class="thin"><b>LAST</b>ARTICLES</h2>
-    {% set articles = collections.posts | head(-3) %}
+    {% set articles = collections.posts | head(-2) %}
     {% for post in articles | reverse %}
       <article>
         <time class="hashed uppercased fontsize-min1" datetime="{{ post.date | htmlDateString }}"><b>{{ post.date | readableDate }}</b></time><br/>
@@ -12,7 +12,7 @@
     <a href="/article/" class="showmore"><small>View all articles</small></a>
   </div>
   <div class="col col-sink">
-    <h2 class="thin">FRIENDS</h2>
+    <h2 class="thin">RELATED<b>LINK</b></h2>
     {% for friend in friendlists.friends | sort(false, false, 'name')%}
     <div><a class="mentioned" href="{{ friend.url }}">{{ friend.name }}</a></div>
     {% endfor %}
