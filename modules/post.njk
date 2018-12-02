@@ -1,0 +1,34 @@
+---
+layout: plain.njk
+---
+<div class="bg-blackprint">
+  <section class="container">
+    <header class="article left">
+      <time class="hashed" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+      <h1>{{ title }}</h1>
+    </header>
+  </section>
+</div>
+<section class="container">
+  <article>
+    {{ content | safe }}
+    <br>
+    <small>
+    <span href="{{ '/tags' | url }}" class="button button-clear button-small">tagged in </span>
+    {% for tag in tags %}
+        {%- if tag != "post" -%}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" class="button button-small">{{ tag }}</a>
+        {%- endif -%}
+    {% endfor %}
+    </small>
+  <hr/>
+  <footer class="container no-padding-y left post-credit-wrapper typo-sans">
+    <img class="circle" width="64" src="{{ metadata.author.photo }}"/>
+    <div class="post-credit">
+      <h6 class="--header typo-sans">written by</h6>
+      <h3 class="--name typo-sans">{{ metadata.author.name }}</h3>
+    </div>
+  </footer>
+  </article>
+</section>

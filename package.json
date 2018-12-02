@@ -1,0 +1,37 @@
+{
+  "name": "yuune.github.io",
+  "version": "1.0.0",
+  "description": "My personal pages - powered by eleventy",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.6.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-shell": "^0.6.5",
+    "gulp-stylus": "^2.7.0",
+    "html-minifier": "^3.5.21",
+    "luxon": "^1.8.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "build": "gulp",
+    "serve": "gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuune/yuune.github.io.git"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty"
+  ],
+  "author": "Nanda Okitavera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuune/yuune.github.io/issues"
+  },
+  "homepage": "https://github.com/yuune/yuune.github.io"
+}

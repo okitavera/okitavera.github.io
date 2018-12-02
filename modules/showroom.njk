@@ -1,0 +1,14 @@
+<div class="row showroom">
+  <div class="col">
+    <h2 class="thin">ARTICLES</h2>
+    {% set articles = collections.posts | head(-3) %}
+    {% include "article-list.njk" %}
+    <a href="/article/" class="showmore"><small>View all articles</small></a>
+  </div>
+  <div class="col col-sink">
+    <h2 class="thin">FRIENDS</h2>
+    {% for friend in friendlists.friends | sort(false, false, 'name')%}
+    <div><a class="mentioned" href="{{ friend.url }}">{{ friend.name }}</a></div>
+    {% endfor %}
+  </div>
+</div>

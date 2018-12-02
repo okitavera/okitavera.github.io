@@ -1,0 +1,190 @@
+.start
+  h1
+    margin 0
+    color $colorDark
+  .desc
+    color $colorDark
+    text-transform uppercase
+    letter-spacing 0.1rem
+  .links
+    span
+      padding 0 1em
+    a
+      padding-bottom 0.5em
+      &:hover
+        border-bottom 0.2em solid $colorAccent
+        color $colorAccent
+
+@media (max-width: 600px)
+  .start
+    .row
+      flex-direction row
+
+.nav
+  border-bottom 1px solid $colorLesssLight
+  background $colorLight
+  .row
+    height 4rem
+    .title
+      font-size 1.2rem
+    .links
+      margin auto 1rem
+      a
+        padding-bottom 0.5em
+        &:hover
+          border-bottom 0.2em solid $colorAccent
+          color $colorAccent
+
+@media (max-width: 600px)
+  .nav
+    .row
+      flex-direction row
+
+.showroom
+  .showmore
+    color $colorLessDark
+    text-transform uppercase
+    letter-spacing 0.1em
+    font-weight 600
+    &::before
+      display inline-block
+      padding 0 0.5em 0 1em
+      color $colorAccent
+      content '⟶'
+  .column
+    margin-bottom 2em
+
+.article-index
+  border-left 3px solid $colorAccent
+  a
+    color $colorLessDark
+    text-transform capitalize
+    font-weight bold
+    font-size 1.3em
+  time
+    margin-left -1em
+    color $colorLessDark
+    font-size 0.8em
+    opacity 0.8
+  .article-item
+    padding-left 1em
+    &::before
+      position relative
+      top 1.5em
+      left -1.6em
+      display inline-block
+      width 1em
+      height 1em
+      border 0.2em solid $colorAccent
+      border-radius 50%
+      background-color $colorLight
+      content ''
+
+.copyright
+  text-transform uppercase
+  letter-spacing 2px
+  font-size 85%
+
+.post-credit-wrapper
+  display flex
+  align-items center
+
+.post-credit
+  display inline-block
+  padding-left 1em
+  > *
+    margin 0
+    padding 0
+  .--header
+    text-transform uppercase
+    font-weight 600 !important
+  .--name
+    color $colorDark
+
+header
+  &.article
+    margin auto
+    max-width 800px
+    h1,
+    time
+      margin 0
+      padding 0
+      text-transform uppercase
+      font-weight bold
+    h1
+      max-width 90%
+      font-size 4em
+      font-size 5vw
+      line-height 1.2
+    time
+      padding-left 0.1em
+
+.codeheader
+  margin-top -0.5rem
+
+article
+  margin auto
+  max-width 800px
+  font-size 1.1em
+  code[class*='language-'],
+  pre[class*='language-']
+    font-size 0.9rem
+  p
+    font-family $font_serif
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    text-transform capitalize
+    font-family $font_serif
+    .direct-link
+      position relative
+      top -0.2em
+      visibility hidden
+      color lighten($colorAccent, 30%)
+      font-size 0.8em
+    &:hover > .direct-link
+      visibility visible
+
+@media screen and (max-width: 1024px)
+  header
+    &.article
+      h1
+        max-width 100%
+        font-size 4em
+        font-size 8vw
+        line-height 1.2
+
+.ovlogo-canvas
+  display inline-block
+  padding 1rem 0
+  svg
+    max-width 512px
+    height auto
+    transform rotate(-10deg)
+    .L1,
+    .L2
+      animation dash 3.2s cubic-bezier(0.4, 0.03, 0.5, 0.9) forwards
+      stroke-dasharray 1000
+      stroke-dashoffset 1000
+      stroke $colorAccent
+      stroke-opacity 1
+    .L2
+      animation dash 3.2s cubic-bezier(0.9, 0.8, 0 0.3, 0.4) forwards
+      animation-delay 1s
+      stroke $colorDark
+    .LSHDW
+      animation opashadow 0.8s cubic-bezier(0.175, 0.885, 0.32, 1) forwards
+      animation-delay 2.3s
+      fill transparentify(black, 0.5)
+      fill-opacity 0
+
+@keyframes dash
+  to
+    stroke-dashoffset 0
+
+@keyframes opashadow
+  to
+    fill-opacity 1

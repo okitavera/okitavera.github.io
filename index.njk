@@ -1,0 +1,37 @@
+{% include "head.njk" %}
+<section class="start bg-sideprint">
+  <div class="container height-stretch items-mid">
+    <div class="row">
+      <div class="col center">
+        <h6 class="animated fadeInUp"><b class="desc">kotlin & android dev | arch</b></h6>
+        <figure class="ovlogo-canvas">
+          {% include 'components/okitavera.min.svg' %}
+        </figure>
+        <h5 class="links animated zoomInUp">
+          <a href="{{ '/#about' | url }}">ABOUT</a>
+          <span>/</span>
+          <a href="{{ '/article/' | url }}">BLOG</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about bg-blackprint" id="about">
+  <div class="container height-stretch items-mid">
+    <div class="row row-mid">
+      <div class="col col-sink self-mid center">
+          <img class="circle" src="{{ metadata.author.photo }}?s=192">
+      </div>
+      <div class="col">
+        <h1 class="left thin">ABOUT<b>ME</b></h1>
+        <p class="left fontsize-plus1">
+          <span class="uppercased">Hello!</span><br/>
+          I am <b>Nanda Okitavera</b>, a psychologist and Android developer.<br/>
+          Primarily use Kotlin for Android development, but also do a bash and python for scripting.<br/>
+          Also I drink coffee, and love chocolate.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "foot.njk" %}

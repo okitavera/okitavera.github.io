@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+layout: plain.njk
+renderData:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag }}/
+---
+<div class="container legacy">
+  <h1 class="thin"><b>POST</b>TAGS</h1>
+  {% for _tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ _tag }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="button button-small{% if tag == _tag %}{% else %} button-outline{% endif %}">{{ _tag }}</a>
+  {% endfor %}
+  <hr class="sp">
+  {% set articles = collections[ tag ] %}
+  <div class="article-index">
+    {% include "article-list.njk" %}
+  </div>
+</div>

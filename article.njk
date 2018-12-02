@@ -1,0 +1,11 @@
+---
+layout: plain.njk
+permalink: /article/
+---
+<section class="container legacy">
+  <h2 class="thin">ALL <b>ARTICLES</b></h2>
+  <div class="article-index">
+    {% set articles = collections.posts %}
+    {% include "article-list.njk" %}
+  </div>
+</section>

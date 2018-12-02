@@ -1,0 +1,95 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  display block
+  font-weight normal
+  b
+    font-size 0.98em
+
+h1
+  margin 0.67em 0
+  font-size 2em
+
+h2
+  margin 0.83em 0
+  font-size 1.5em
+
+h3
+  margin 1em 0
+  font-size 1.17em
+
+h4
+  margin 1.33em 0
+  font-size 1em
+
+h5
+  margin 1.67em 0
+  font-size 0.83em
+
+h6
+  margin 2.33em 0
+  font-size 0.67em
+
+small
+  font-size 0.75em
+
+a
+  color $colorAccent
+  text-decoration none
+  &:focus,
+  &:hover
+    color $colorLessDark
+
+time
+  color $colorLessDark
+
+.typo-serif
+  font-family $font_serif
+
+.typo-sans
+  font-family $font_sans
+
+.typo-mono
+  font-family $font_mono
+
+.text-light
+  color $colorLight !important
+
+a.text-light
+  color $colorLight !important
+
+.uppercased
+  text-transform uppercase
+
+.fontsize-min1
+  font-size 80%
+
+.fontsize-plus1
+  font-size 120%
+
+.thin
+  font-weight 100
+
+.center
+  text-align center
+
+.left
+  text-align left
+
+.right
+  text-align right
+
+.hashed
+  &::before
+    padding-right 0.3em
+    content '#'
+    opacity 0.5
+
+.mentioned
+  &::before
+    padding-right 0.3em
+    content '@'
+    opacity 0.5

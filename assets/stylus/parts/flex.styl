@@ -1,0 +1,51 @@
+.container
+  display flex
+  flex-direction row
+  margin 0 auto
+  padding 2rem 1rem
+  max-width 980px
+  width 100%
+  &.legacy
+    display block
+
+.self-start
+  align-self flex-start
+
+.self-end
+  align-self flex-end
+
+.self-mid
+  align-self center
+
+.items-start
+  align-items flex-start
+
+.items-end
+  align-items flex-end
+
+.items-mid
+  align-items center
+
+.items-stretch
+  align-items stretch
+
+.items-baseline
+  align-items baseline
+
+.row
+  display flex
+  flex-direction column
+  padding 0
+  width 100%
+  .col
+    display block
+    flex 1 1 auto
+    &.col-sink
+      flex 0 1 auto
+
+@media (min-width: 600px)
+  .row
+    flex-direction row
+    .col
+      margin-bottom inherit
+      padding 0 1rem

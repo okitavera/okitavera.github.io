@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 8
+before_script:
+  - npm install
+script:
+  - npm run build
+  - touch build/.nojekyll
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  target_branch: master
+  local_dir: build
+  on:
+    branch: eleventy
