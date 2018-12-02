@@ -1,8 +1,14 @@
 <div class="row showroom">
   <div class="col">
-    <h2 class="thin">ARTICLES</h2>
+    <h2 class="thin"><b>LAST</b>ARTICLES</h2>
     {% set articles = collections.posts | head(-3) %}
-    {% include "article-list.njk" %}
+    {% for post in articles | reverse %}
+      <article>
+        <time class="hashed uppercased fontsize-min1" datetime="{{ post.date | htmlDateString }}"><b>{{ post.date | readableDate }}</b></time><br/>
+        <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+      </article>
+      <div class="sp sp-xs"></div>
+    {% endfor %}
     <a href="/article/" class="showmore"><small>View all articles</small></a>
   </div>
   <div class="col col-sink">

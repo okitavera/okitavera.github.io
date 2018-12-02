@@ -5,6 +5,7 @@ tags:
   - bash
   - linux
 layout: post.njk
+splash: 'https://source.unsplash.com/p-xSl33Wxyc/800x300'
 ---
 The `/bin/sh` is usually a symlink to the system default shell.
 It maybe a simple ways to do, especially for those who write the script in a pure POSIX shell.

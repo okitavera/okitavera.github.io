@@ -1,12 +1,34 @@
 .container
   display flex
-  flex-direction row
+  flex-flow column nowrap
   margin 0 auto
   padding 2rem 1rem
   max-width 980px
   width 100%
   &.legacy
     display block
+
+.row
+  display flex
+  flex 1
+  flex-flow row wrap
+  padding 0
+  width 100%
+  .col
+    display block
+    flex 1 1 auto
+    padding 0 1rem
+    &.col-sink
+      flex 0 1 auto
+@media screen and (max-width $flexTreshold)
+  .row
+    flex-flow column
+
+.fx-wrap
+  flex-wrap wrap
+
+.fx-nowrap
+  flex-wrap nowrap
 
 .self-start
   align-self flex-start
@@ -31,21 +53,3 @@
 
 .items-baseline
   align-items baseline
-
-.row
-  display flex
-  flex-direction column
-  padding 0
-  width 100%
-  .col
-    display block
-    flex 1 1 auto
-    &.col-sink
-      flex 0 1 auto
-
-@media (min-width: 600px)
-  .row
-    flex-direction row
-    .col
-      margin-bottom inherit
-      padding 0 1rem

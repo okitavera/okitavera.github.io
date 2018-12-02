@@ -2,10 +2,34 @@
 layout: plain.njk
 permalink: /article/
 ---
-<section class="container legacy">
-  <h2 class="thin">ALL <b>ARTICLES</b></h2>
-  <div class="article-index">
+<div class="bg-lesslight">
+<section class="container no-padding-y">
+  <h1 class="thin center">
+    <span class="fontsize-plus1">ALL<b>ARTICLES</b></span>
+  </h1>
+  <div class="article-index center">
     {% set articles = collections.posts %}
-    {% include "article-list.njk" %}
+    {% for post in articles | reverse %}
+      <a href="{{ post.url | url }}"><article class="article-item bg-accent">
+        <div class="container bg-blackprint static" {% if post.data.splash %}style="background-image: url({{ post.data.splash }});background-size: cover"{% endif %}>
+          <div class="row items-mid  {% if post.data.splash %}has-splash{% endif %}"><div class="col">
+            <div class="sp sp-xs"></div>
+            <time class="hashed uppercased text-light" datetime="{{ post.date | htmlDateString }}">
+              <b>{{ post.date | readableDate }}</b>
+            </time>
+            <h1 class="text-light"><b>
+                  {% if post.data.title %}
+                    {{ post.data.title }}
+                  {% else %}
+                    <code>{{ post.url }}</code>
+                  {% endif %}
+                </b></h1>
+            <div class="sp sp-xs"></div>
+          </div></div>
+        </div>
+      </article></a>
+      <div class="sp sp-xs"></div>
+    {% endfor %}
   </div>
 </section>
+</div>

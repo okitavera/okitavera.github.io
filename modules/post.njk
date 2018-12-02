@@ -1,16 +1,17 @@
 ---
 layout: plain.njk
 ---
-<div class="bg-blackprint">
+<div class="bg-blackprint" {% if splash %}style="background-image: url({{ splash }});background-size:cover"{% endif %}>
+<div {% if splash %}class="darken-bg" {% endif %}>
   <section class="container">
-    <header class="article left">
-      <time class="hashed" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+    <header class="paper left">
+      <time class="hashed text-light" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
       <h1>{{ title }}</h1>
     </header>
   </section>
-</div>
-<section class="container">
-  <article>
+</div></div>
+<section class="container no-padding-y">
+  <article class="paper">
     {{ content | safe }}
     <br>
     <small>
@@ -23,12 +24,13 @@ layout: plain.njk
     {% endfor %}
     </small>
   <hr/>
-  <footer class="container no-padding-y left post-credit-wrapper typo-sans">
+  <footer class="post-credit-wrapper no-padding-y">
     <img class="circle" width="64" src="{{ metadata.author.photo }}"/>
     <div class="post-credit">
-      <h6 class="--header typo-sans">written by</h6>
-      <h3 class="--name typo-sans">{{ metadata.author.name }}</h3>
+      <h6>written by</h6>
+      <h3>{{ metadata.author.name }}</h3>
     </div>
   </footer>
+  <div class="sp"></div>
   </article>
 </section>
