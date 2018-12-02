@@ -6,8 +6,8 @@
     <meta name="title" content="{{ renderData.title or title or metadata.title }}">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <link rel="canonical" href="{{ metadata.url + page.url }}">
-    <link rel="preconnect" href="//fonts.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="//source.unsplash.com" crossorigin>
     <link rel="preconnect" href="//images.unsplash.com" crossorigin>
     <link rel="preload" as="image" type="image/jpeg" src="{{ metadata.author.photo }}?s=192" crossorigin>
@@ -16,6 +16,7 @@
     <link rel="alternate" type="application/rss+xml" title="{{ metadata.feed.title }}" href="{{ metadata.feed.path | url }}">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i|Noto+Serif:400,400i,700,700i|Inconsolata:400,700&subset=latin,latin-ext">
     <style>
         {% include 'components/app.css' %}
     </style>
