@@ -23,6 +23,11 @@
 .nav
   border-bottom 1px solid $colorLesssLight
   background $colorLight
+  &.clears
+    background transparent
+    border-color: transparent
+    a
+      color $colorLight
   .row
     height 4rem
     .title
@@ -113,6 +118,7 @@ header
     margin auto
     width 100%
     max-width 800px
+    min-height: 20rem
     h1,
     time
       margin 0
@@ -156,6 +162,8 @@ header
 @media screen and (max-width: $flexTreshold)
   header
     &.paper
+      flex-direction row
+      min-height: 15rem
       h1
         max-width 100%
         font-size 4em

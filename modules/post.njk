@@ -1,12 +1,14 @@
----
-layout: plain.njk
----
-<div class="bg-blackprint" {% if splash %}style="background-image: url({{ splash }});background-size:cover"{% endif %}>
+{% include "head.njk" %}
+<div class="bg-blackprint" {% if splash %} style="background-image: url({{ splash }});background-size:cover" {% endif %}>
 <div {% if splash %}class="darken-bg" {% endif %}>
+{% set nav_class = "clears" %}
+{% include "navs.njk" %}
   <section class="container">
-    <header class="paper left">
-      <time class="hashed text-light" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
-      <h1>{{ title }}</h1>
+    <header class="row paper items-mid left">
+      <div class="col">
+        <time class="hashed text-light" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+        <h1>{{ title }}</h1>
+      </div>
     </header>
   </section>
 </div></div>
@@ -34,3 +36,4 @@ layout: plain.njk
   <div class="sp"></div>
   </article>
 </section>
+{% include "foot.njk" %}
