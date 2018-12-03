@@ -4,7 +4,7 @@ date: 2018-11-27
 tags:
   - psychology
 layout: post.njk
-splash: "https://source.unsplash.com/RmzR87vTiYw/800x300"
+splash: "https://source.unsplash.com/RmzR87vTiYw/768x350"
 ---
 In a some cases, it’s okay to give people constructive criticism.
 But honesty saying to someone that they are ignorant, immature, and narrow minded is just mean and a form of bullying.
