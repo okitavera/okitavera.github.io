@@ -33,6 +33,10 @@
       <h3>{{ metadata.author.name }}</h3>
     </div>
   </footer>
+  {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
+  <hr>
+  <div class="disqus"></div>
+  {% endif %}
   <div class="sp"></div>
   </article>
 </section>

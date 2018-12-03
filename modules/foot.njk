@@ -20,5 +20,9 @@
 </body>
 <script>
     {% include "components/smoothscroll.js" %}
+    {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
+      {% include "components/disqusLoader.js" %}
+      disqusLoader('.disqus',{ scriptUrl: '//{{ metadata.disqus.username }}.disqus.com/embed.js' });
+    {% endif %}
 </script>
 </html>

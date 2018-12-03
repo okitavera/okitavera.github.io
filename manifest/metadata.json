@@ -6,9 +6,13 @@
     "email": "codeharuka.yusa@gmail.com",
     "photo": "https://avatars0.githubusercontent.com/u/9277632"
   },
-  "feed":{
+  "feed": {
     "title": "RSS Feed for okitavera's articles",
     "subtitle": "okitavera's personal pages",
     "path": "/article/feed/"
+  },
+  "disqus": {
+    "enable": "true",
+    "username": "yuune-github-io"
   }
 }
