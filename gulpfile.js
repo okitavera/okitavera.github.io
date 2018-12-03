@@ -1,7 +1,8 @@
 var gulp = require("gulp"),
   clean = require("gulp-clean"),
   shell = require("gulp-shell"),
-  stylus = require("gulp-stylus");
+  stylus = require("gulp-stylus"),
+  fs = require('fs');
 
 var cleanup = () => {
   return gulp
@@ -28,8 +29,20 @@ var stylwatch = () => {
   return gulp.watch("assets/stylus/**", gulp.series(stylbuild));
 };
 
-var xitybuild = gulp.series(stylbuild, shell.task("eleventy")),
-  xityserve = gulp.series(stylbuild, shell.task("eleventy --serve")),
+var personal = (res) => {
+  if (!fs.existsSync('build')){
+    fs.mkdirSync('build');
+  }
+
+  // for github pages
+  fs.writeFile('build/.nojekyll', '', res);
+
+  // google site verification
+  fs.writeFile('build/google9ab7bf08387cc375.html', 'google-site-verification: google9ab7bf08387cc375.html', res);
+}
+
+var xitybuild = gulp.series(stylbuild, personal, shell.task("eleventy")),
+  xityserve = gulp.series(stylbuild, personal, shell.task("eleventy --serve")),
   watchall = gulp.parallel(stylwatch, xityserve);
 
 gulp.task("serve", gulp.series(cleanup, watchall));
