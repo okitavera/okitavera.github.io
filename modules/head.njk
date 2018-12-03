@@ -4,6 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="{{ renderData.title or title or metadata.title }}">
+    <meta name="theme-color" content="#f47"/>
+    <meta property="og:image" content="{{ splash or metadata.author.photo }}">
+    <meta name="twitter:card" content="summary_large_image">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <link rel="canonical" href="{{ metadata.url + page.url }}">
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
