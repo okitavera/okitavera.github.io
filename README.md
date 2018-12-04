@@ -1,8 +1,8 @@
-## yuune.github.io
+## okitavera.github.io
 
-Source of my [personal pages](https://yuune.github.io)
+Source of my [personal pages](https://okitavera.github.io)
 
-[![Build Status](https://travis-ci.com/yuune/yuune.github.io.svg?branch=eleventy)](https://travis-ci.com/yuune/yuune.github.io)
+[![Build Status](https://travis-ci.com/okitavera/okitavera.github.io.svg?branch=eleventy)](https://travis-ci.com/okitavera/okitavera.github.io)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 

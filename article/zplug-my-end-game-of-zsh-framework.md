@@ -66,6 +66,6 @@ Pretty fast, is it ? I mean, it just less than half of second! If I compare to t
 
 And for the last things, if you want to see my configs, you can look at my dotfiles here :
 
-https://github.com/yuune/dotfiles/blob/master/assets/.zshrc
+https://github.com/okitavera/dotfiles/blob/master/assets/.zshrc
 
 Thanks :)
