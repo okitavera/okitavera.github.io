@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const URL = require('url').URL;
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection(
@@ -26,6 +27,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-LL-dd");
   });
+
   eleventyConfig.addFilter("getHostnameFromUrl", base => {
     return new URL(base).hostname;
   });
