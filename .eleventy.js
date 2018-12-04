@@ -12,6 +12,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
+
+  eleventyConfig.addFilter("lastWord", words => {
+    return words.split(" ").splice(-1);
+  });
+
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "LLLL dd, yyyy"
