@@ -1,36 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="{{ posttitle or renderData.title or title or metadata.title }}">
-    <meta name="theme-color" content="#f47"/>
-    <meta content="{{ metadata.title }}" property="og:site_name">
-    <meta content="{{ renderData.title or title or metadata.title }}" property="og:title">
-    <meta content="{{ metadata.url | getHostnameFromUrl }}" property="og:url">
-    <meta content="{{ description or metadata.description or (metadata.author.name | lastWord + '\'s Github Pages') }}" property="og:description">
-    {% if date %}
-      <meta content="{{ date }}" property="article:published_time">
-      <meta content="{{ metadata.url }}" property="article:author">
-    {% endif %}
-    {% if tags %}
-        {% for tag in tags %}
-        <meta content="{{ tag }}" property="article:tag">
-        {% endfor %}
-    {% endif %}
-    <meta content="{{ splash or metadata.author.photo }}" property="og:image">
-    <title>{{ posttitle or renderData.title or title or metadata.title }}</title>
-    <link rel="canonical" href="{{ metadata.url + page.url }}">
-    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="//source.unsplash.com" crossorigin>
-    <link rel="preconnect" href="//images.unsplash.com" crossorigin>
-    <link rel="alternate" type="application/rss+xml" title="{{ metadata.feed.title }}" href="{{ metadata.feed.path | url }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i|Noto+Serif:400,400i,700,700i|Inconsolata:400,700&subset=latin,latin-ext">
-    <style>
-        {% include 'components/app.css' %}
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="{{ posttitle or renderData.title or title or metadata.title }}">
+  <meta name="theme-color" content="#f47"/>
+  <meta content="{{ metadata.title }}" property="og:site_name">
+  <meta content="{{ renderData.title or title or metadata.title }}" property="og:title">
+  <meta content="{{ metadata.url | getHostnameFromUrl }}" property="og:url">
+  <meta content="{{ description or metadata.description or (metadata.author.name | lastWord + '\'s Github Pages') }}" property="og:description">
+  {% if date %}
+    <meta content="{{ date }}" property="article:published_time">
+    <meta content="{{ metadata.url }}" property="article:author">
+  {% endif %}
+  {% if tags %}
+    {% for tag in tags %}
+    <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
+  {% endif %}
+  <meta content="{{ splash or metadata.author.photo }}" property="og:image">
+  <title>{{ posttitle or renderData.title or title or metadata.title }}</title>
+  <link rel="canonical" href="{{ metadata.url + page.url }}">
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="//source.unsplash.com" crossorigin>
+  <link rel="preconnect" href="//images.unsplash.com" crossorigin>
+  <link rel="alternate" type="application/rss+xml" title="{{ metadata.feed.title }}" href="{{ metadata.feed.path | url }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i|Noto+Serif:400,400i,700,700i|Inconsolata:400,700&subset=latin,latin-ext">
+  <style>
+    {% include 'components/app.css' %}
+  </style>
 </head>
 <body>
