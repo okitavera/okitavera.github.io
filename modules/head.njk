@@ -3,11 +3,23 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="{{ renderData.title or title or metadata.title }}">
+    <meta name="title" content="{{ posttitle or renderData.title or title or metadata.title }}">
     <meta name="theme-color" content="#f47"/>
-    <meta property="og:image" content="{{ splash or metadata.author.photo }}">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>{{ renderData.title or title or metadata.title }}</title>
+    <meta content="{{ metadata.title }}" property="og:site_name">
+    <meta content="{{ renderData.title or title or metadata.title }}" property="og:title">
+    <meta content="{{ metadata.url | getHostnameFromUrl }}" property="og:url">
+    <meta content="{{ description or metadata.description or (metadata.author.name | lastWord + '\'s Github Pages') }}" property="og:description">
+    {% if date %}
+      <meta content="{{ date }}" property="article:published_time">
+      <meta content="{{ metadata.url }}" property="article:author">
+    {% endif %}
+    {% if tags %}
+        {% for tag in tags %}
+        <meta content="{{ tag }}" property="article:tag">
+        {% endfor %}
+    {% endif %}
+    <meta content="{{ splash or metadata.author.photo }}" property="og:image">
+    <title>{{ posttitle or renderData.title or title or metadata.title }}</title>
     <link rel="canonical" href="{{ metadata.url + page.url }}">
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>

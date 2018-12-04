@@ -1,3 +1,4 @@
+{% set posttitle = title + ' - ' + metadata.title %}
 {% include "head.njk" %}
 <div class="bg-blackprint" {% if splash %} style="background-image: url({{ splash }});background-size:cover" {% endif %}>
 <div {% if splash %}class="darken-bg" {% endif %}>
