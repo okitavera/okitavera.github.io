@@ -1,7 +1,7 @@
 {% set articles = collections.posts | head(-3) %}
 <section class="recent-article" id="recent-article">
   <div class="container">
-    <h2 class="thin"><b>RECENT</b>ARTICLES</h2>
+    <h2 class="thin" style="margin-top:0"><b>RECENT</b>ARTICLES</h2>
     <div class="row fx-nowrap items-stretch">
       {% for post in articles | reverse %}
       <div class="col col-4 card">
