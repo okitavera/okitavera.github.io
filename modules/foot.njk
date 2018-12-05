@@ -8,8 +8,8 @@
     <div class="row ignore-mobile">
       {% for friend in friendlists.friends | sort(false, false, 'name')%}
       <div class="col fx-nogrow" style="padding:0.5rem">
-        <a href="{{ friend.url }}" class="text-dark friend-link">
-          <img width="40" height="40" class="circle" src="{{ friend.img }}"><br>
+        <a rel="noopener" href="{{ friend.url }}" alt="{{ friend.name }}" aria-label="{{ friend.name }}" target="_blank" class="text-dark friend-link">
+          <img width="40" height="40" class="circle ---ll" data-src="{{ friend.img }}"><br>
           <b class="uppercased text-smaller">{{ friend.name }}</b>
         </a>
       </div>
@@ -31,12 +31,17 @@
     </div>
   </footer>
 </div>
-</body>
-<script>
-    {% include "components/smoothscroll.js" %}
-    {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
-      {% include "components/disqusLoader.js" %}
-      disqusLoader('.disqus',{ scriptUrl: '//{{ metadata.disqus.username }}.disqus.com/embed.js' });
-    {% endif %}
+<script async>
+  {% include "components/smoothscroll.js" %}
+  {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
+    {% include "components/disqusLoader.js" %}
+    disqusLoader('.disqus',{ scriptUrl: '//{{ metadata.disqus.username }}.disqus.com/embed.js' });
+  {% endif %}
+  {% include "components/lazyload.min.js" %}
+  window.lazyLoadOptions = {
+    threshold: 0
+  };
+  new LazyLoad({elements_selector: ".---ll"});
 </script>
+</body>
 </html>
