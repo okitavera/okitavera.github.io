@@ -2,31 +2,38 @@
   "friends": [
     {
       "name": "addy",
-      "url": "https://addy-dclxvi.github.io"
+      "url": "https://addy-dclxvi.github.io",
+      "img": "https://github.com/addy-dclxvi.png?size=32"
     },
     {
       "name": "black4t",
-      "url": "https://github.com/black4t"
+      "url": "https://github.com/black4t",
+      "img": "https://github.com/black4t.png?size=32"
     },
     {
       "name": "epsi-rns",
-      "url": "https://epsi-rns.gitlab.io/"
+      "url": "https://epsi-rns.gitlab.io/",
+      "img": "https://github.com/epsi-rns.png?size=32"
     },
     {
       "name": "reorr",
-      "url": "https://github.com/reorr"
+      "url": "https://github.com/reorr",
+      "img": "https://github.com/reorr.png?size=32"
     },
     {
-      "name": "fikriomar",
-      "url": "https://github.com/fikriomar16"
+      "name": "fikriomar16",
+      "url": "https://github.com/fikriomar16",
+      "img": "https://github.com/fikriomar16.png?size=32"
     },
     {
       "name": "bandithijo",
-      "url": "https://bandithijo.com"
+      "url": "https://bandithijo.com",
+      "img": "https://github.com/bandithijo.png?size=32"
     },
     {
       "name": "aflasio",
-      "url": "https://aflasio.com"
+      "url": "https://aflasio.com",
+      "img": "https://blog.aflasio.com/images/seira.jpg"
     }
   ]
 }
