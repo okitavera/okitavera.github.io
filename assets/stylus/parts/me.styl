@@ -14,7 +14,14 @@
 .nav
   border-bottom 1px solid $colorLesssLight
   background $colorLight
-  &.clears
+  transition: 0.2s ease-out all;
+  &.stay
+    width: 100vw
+    position: fixed
+    z-index: 99
+    & ~ div, ~ section
+      padding-top: 4rem
+   &.clears
     border-color transparent
     background transparent
     a

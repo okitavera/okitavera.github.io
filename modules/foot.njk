@@ -42,6 +42,18 @@
     threshold: 0
   };
   new LazyLoad({elements_selector: ".---ll"});
+  var myNav = document.querySelector(".nav"),
+      qClearsEnd = document.querySelector('.clearsEnd');
+
+  window.onscroll = function() {
+    "use strict";
+    var clearsEnd = qClearsEnd.offsetTop - qClearsEnd.offsetHeight;
+    if (document.body.scrollTop >= clearsEnd || document.documentElement.scrollTop >= clearsEnd) {
+      myNav.classList.remove("clears");
+    } else {
+      myNav.classList.add("clears");
+    }
+  };
 </script>
 </body>
 </html>
