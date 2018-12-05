@@ -24,8 +24,8 @@
   border-bottom 1px solid $colorLesssLight
   background $colorLight
   &.clears
+    border-color transparent
     background transparent
-    border-color: transparent
     a
       color $colorLight
   .row
@@ -45,49 +45,62 @@
     .row
       flex-direction row
 
-.showroom
-  .showmore
-    color $colorLessDark
-    text-transform uppercase
-    letter-spacing 0.1em
-    font-weight 600
-    &::before
-      display inline-block
-      padding 0 0.5em 0 1em
-      color $colorAccent
-      content '⟶'
-  .column
-    margin-bottom 2em
+.card
+  margin 0 1rem 0 0
+  padding 0 !important
+  border-radius 5px
+  box-shadow 0 5px 0px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08)
+
+.card:last-child
+  margin 0
+
+@media screen and (max-width: $flexTreshold)
+  .card
+    margin 0 0 1rem
+
+.card-thumbnail
+  width 100%
+  height 10rem
+
+.card-context
+  padding 1rem
+
+.showmore
+  margin-top 1rem
+  color $colorLessDark
+  text-transform uppercase
+  letter-spacing 0.1em
+  font-weight 600
 
 .article-index
   .article-item
-    margin-bottom: 2rem
-    border-radius: 10px
+    margin-bottom 2rem
+    border-radius 10px
     .container
-      border-radius: 10px
       padding 0
-      background-color: #000000
-      box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
-      transition: 0.18s ease-out;
+      border-radius 10px
+      background-color #000000
+      box-shadow 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08)
+      transition 0.18s ease-out
       &:hover
-        transform: translateY(-1rem);
-        box-shadow: 0 16px 35px 0 rgba(0, 0, 0, 0.27), 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+        box-shadow 0 16px 35px 0 rgba(0, 0, 0, 0.27), 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+        transform translateY(-1rem)
     .row
-      min-height 17rem
-      border-radius: 10px
       padding 2rem 1rem
+      min-height 17rem
+      border-radius 10px
       &:hover
-        transition: 0.18s ease-out;
+        transition 0.18s ease-out
       &.has-splash
-        background-color: rgba(black, 0.6)
+        background-color rgba(black, 0.6)
         &:hover
-          transition: 0.18s ease-out;
-          background-color: rgba(black, 0.8)
+          background-color rgba(black, 0.8)
+          transition 0.18s ease-out
       *
-        text-shadow: 0px 3px 0px #4E4E4E;
+        text-shadow 0px 3px 0px #4E4E4E
 
 .darken-bg
-  background-color: rgba(black, 0.8)
+  background-color rgba(black, 0.8)
 
 .copyright
   text-transform uppercase
@@ -116,17 +129,17 @@
 header
   &.paper
     margin auto
-    width 100%
+    min-height 20rem
     max-width 800px
-    min-height: 20rem
+    width 100%
     h1,
     time
       margin 0
       padding 0
       text-transform uppercase
+      text-shadow 0px 3px 0px #4E4E4E
       font-weight bold
       font-family $font_sans
-      text-shadow: 0px 3px 0px #4E4E4E;
     h1
       max-width 90%
       font-size 4em
@@ -137,8 +150,8 @@ header
 
 .paper
   margin auto
-  width 100%
   max-width 800px
+  width 100%
   font-size 1.1em
   p
     font-family $font_serif
@@ -163,7 +176,7 @@ header
   header
     &.paper
       flex-direction row
-      min-height: 15rem
+      min-height 15rem
       h1
         max-width 100%
         font-size 4em
@@ -172,14 +185,14 @@ header
 
 .ovlogo-canvas
   display block
-  padding 1rem 0
   margin 0
+  padding 1rem 0
   svg
-    transform rotate(-10deg)
     max-width 512px
     max-height auto
     width 100%
     height auto
+    transform rotate(-10deg)
     .L1,
     .L2
       animation dash 3.2s cubic-bezier(0.4, 0.03, 0.5, 0.9) forwards
@@ -205,7 +218,6 @@ header
       width 100%
       height auto
 
-
 @keyframes dash
   to
     stroke-dashoffset 0
@@ -213,3 +225,12 @@ header
 @keyframes opashadow
   to
     fill-opacity 1
+
+.friend-link > b
+  display none
+.friend-link:hover > b
+  display: block
+  position absolute
+  background: $colorDark
+  color: $colorLight
+  padding: 0.2rem 1rem

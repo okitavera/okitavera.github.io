@@ -12,23 +12,33 @@
   display flex
   flex 1
   flex-flow row wrap
+  margin: 0
   padding 0
   width 100%
   .col
     display block
     flex 1 1 auto
-    padding 0 1rem
     &.col-sink
       flex 0 1 auto
+    &.col-4
+      flex 1 1 33%
+    &.col-full
+      flex 1 0 100%
+
 @media screen and (max-width $flexTreshold)
   .row
     flex-flow column
+    &.ignore-mobile
+      flex-flow row wrap
 
 .fx-wrap
   flex-wrap wrap
 
 .fx-nowrap
   flex-wrap nowrap
+
+.fx-nogrow
+  flex-grow 0 !important
 
 .self-start
   align-self flex-start

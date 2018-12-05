@@ -1,0 +1,23 @@
+{% set articles = collections.posts | head(-3) %}
+<section class="recent-article" id="recent-article">
+  <div class="container">
+    <h2 class="thin"><b>RECENT</b>ARTICLES</h2>
+    <div class="row fx-nowrap items-stretch">
+      {% for post in articles | reverse %}
+      <div class="col col-4 card">
+        <a href="{{ post.url | url }}">
+        <div class="card-thumbnail bg-blackprint static" {% if post.data.splash.url %}style="background-image: url({{ post.data.splash.url }});background-size: cover"{% endif %}></div>
+        <div class="card-context">
+          <time class="hashed uppercased" datetime="{{ post.date | htmlDateString }}"><b>{{ post.date | readableDate }}</b></time>
+          <br><b>{{ post.data.title }}</b>
+        </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="/article/">
+      <div class="center showmore">View all articles</div>
+    </a>
+  </div>
+</section>
+      
