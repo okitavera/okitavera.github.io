@@ -2,7 +2,7 @@
   display flex
   flex-flow column nowrap
   margin 0 auto
-  padding 2rem 1rem
+  padding 1rem
   max-width 980px
   width 100%
   &.legacy
@@ -12,7 +12,7 @@
   display flex
   flex 1
   flex-flow row wrap
-  margin: 0
+  margin 0
   padding 0
   width 100%
   .col
@@ -20,12 +20,12 @@
     flex 1 1 auto
     &.col-sink
       flex 0 1 auto
-    &.col-4
-      flex 1 1 33%
+    &.col-eq
+      flex 1
     &.col-full
       flex 1 0 100%
 
-@media screen and (max-width $flexTreshold)
+@media screen and (max-width: $flexTreshold)
   .row
     flex-flow column
     &.ignore-mobile
