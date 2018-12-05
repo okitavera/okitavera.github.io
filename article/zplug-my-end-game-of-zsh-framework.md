@@ -5,8 +5,11 @@ tags:
   - zsh
   - linux
 layout: post.njk
-splash: 'https://source.unsplash.com/7P8p1NBk37U/768x350'
+splash:
+  url: "/assets/img/articles/splashes/zplug.jpg"
+  credit: "Background from: https://unsplash.com/photos/7P8p1NBk37U"
 ---
+
 To be honest, I am a lazy person. It was a very long time that I use the default Arch Linux `.zshrc`, they use the grml-zsh-config as their base config on their bootable image.
 It was a "*well, it works*" experience for me, since the only things that I want from my terminal emulator is just a common things like command completions and finding history.
 
