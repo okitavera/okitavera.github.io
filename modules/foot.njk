@@ -1,32 +1,23 @@
-<div class="bg-lesslight">
-  <div class="container" style="padding-bottom:0">
+<div class="bg-lighter">
+  <footer class="container copyright">
     <div class="row">
-      <div class="col">
-        <h2 class="text-thin" style="margin-top:0">FRIENDS<b>LINK</b></h2>
+      <div class="col center text-smaller">
+        <a href="/">Home</a> /
+        <a href="/#about">About</a> /
+        <a href="/article">Blog</a> /
+        <a href="/#sideprojects">Projects</a> /
+        <a href="/friends">Friends</a> /
+        <a href="{{ metadata.feed.path }}">RSS</a>
       </div>
     </div>
-    <div class="row ignore-mobile">
-      {% for friend in friendlists.friends | sort(false, false, 'name')%}
-      <div class="col fx-nogrow" style="padding:0.5rem">
-        <a rel="noopener" href="{{ friend.url }}" alt="{{ friend.name }}" aria-label="{{ friend.name }}" target="_blank" class="text-dark friend-link">
-          <img width="40" height="40" class="circle ---ll" data-src="{{ friend.img }}"><br>
-          <b class="uppercased text-smaller">{{ friend.name }}</b>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-  <footer class="container">
-    <div class="row copyright">
-      <div class="col">
-        <small>
-          <b>&copy;</b> 2018 <b>Nanda Okitavera</b> // Made with a computer, coffee, and curiousity
+    <div class="row">
+      <div class="col center text-smaller">
+          Proudly powered by 
+          <a rel="noopener" target="_blank" href="https://github.com/11ty/eleventy">Eleventy</a>,
+          <a rel="noopener" target="_blank" href="https://travis-ci.com/okitavera/okitavera.github.io">Travis</a>, and
+          <a rel="noopener" target="_blank" href="https://github.com/okitavera/okitavera.github.io/tree/eleventy">GitHub</a>.
           <br>
-          #<a href="https://github.com/11ty/eleventy">11ty</a>&nbsp;
-          #<a href="https://github.com/okitavera/okitavera.github.io/tree/eleventy">GitHub</a>&nbsp;
-          #<a href="https://travis-ci.com/okitavera/okitavera.github.io">travisci</a>&nbsp;
-          #<a href="{{ metadata.feed.path }}">RSS</a>&nbsp;
-        </small>
+          <b>&copy;</b> 2018 Designed by okitavera
       </div>
     </div>
   </footer>
