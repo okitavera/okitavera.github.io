@@ -19,17 +19,11 @@
   <div class="container">
     <div class="row fx-nowrap items-mid">
       <div class="col center">
-        <h1 class="text-thin no-padding-y">Welcome!</h1>
+        <h1 class="text-thin no-padding-y text-uppercase">HELLO THERE!</h1>
         <p class="text-bigger">
-          Hello there, Welcome to my page :)<br />
-          You can also jump into the my list of
-          <a class="button button-small button-ulined" href="/#sideproject"
-            >side-projects</a
-          >
-          or
-          <a class="button button-small button-ulined" href="/article"
-            >articles</a
-          >
+          Welcome to my page :) . You can also jump into the my list of
+          <a class="button button-small button-ulined" href="#sideprojects">#sideprojects</a>
+          or <a class="button button-small button-ulined" href="#recentarticles">#recentarticles</a> below.
         </p>
         <div class="sp"></div>
       </div>
@@ -59,82 +53,28 @@
     </div>
   </div>
 </section>
-<section class="side-project-title center bg-accent text-light" id="sideproject">
-  <div class="container">
-    <div class="row fx-nowrap items-mid">
+<section class="side-project-title bg-lessdark darken-bg text-light" id="sideprojects">
+  <div class="container height-stretch">
+    <div class="row items-mid">
       <div class="col">
         <h1 class="text-thin no-padding-y">SIDE<b>PROJECTS</b></h1>
       </div>
     </div>
+    <div class="row items-stretch">
+      {% for project in collections.projects %}
+      <div class="col col-eq side-padding card">
+        <div class="card-thumbnail" style="background-image: url({{ project.data.img }})"></div>
+        <div class="card-context bg-dark">
+          <h3 class="text-thin no-margin-y text-uppercase">{{ project.data.name }}</h3>
+          <span class="text-smaller">{{ project.data.desc }}</span>
+          <div><br>{{ project.templateContent | safe }}</div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
   </div>
 </section>
-<section class="side-project center bg-blackprint text-light">
-  <div class="sp sp-l"></div>
-  <div class="container">
-    <div class="row fx-nowrap items-mid">
-      <div class="col col-sink side-padding">
-        <img
-          class="project-thumb ---ll"
-          alt="cornora"
-          width="192"
-          height="192"
-          data-src="/assets/img/sideprojects/crosshairhero.png"
-        />
-      </div>
-      <div class="col side-padding">
-        <h1 class="text-thin">Crosshair Hero</h1>
-        <p class="text-bigger">
-          Lightweight and Customizable Crosshair painter for android 4.4+<br/>
-          <a class="button button-small text-light" href="https://play.google.com/store/apps/details?id=me.okitastudio.crosshairherofps">Play Store</a>
-          <a class="button button-small text-light" href="https://apkpure.com/crosshair-hero-overlay-crosshair/me.okitastudio.crosshairherofps">APKPure</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row fx-nowrap items-mid">
-      <div class="col col-sink side-padding">
-        <img
-          class="project-thumb ---ll"
-          alt="clearine"
-          width="192"
-          height="192"
-          data-src="/assets/img/sideprojects/clearine.png"
-        />
-      </div>
-      <div class="col side-padding">
-        <h1 class="text-thin">Clearine</h1>
-        <p class="text-bigger">
-          Minimalist and configurable GTK-based Session/Logout manager for X11
-          window manager. Written in python. <br />
-          <a class="button button-small text-light" href="https://github.com/okitavera/clearine">GitHub</a>
-          <a class="button button-small text-light" href="https://aur.archlinux.org/packages/clearine-git/">AUR</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="sp sp-l"></div>
-  <div class="container">
-    <div class="row fx-nowrap items-mid">
-      <div class="col col-sink side-padding">
-        <img
-          class="project-thumb ---ll"
-          alt="cornora"
-          width="192"
-          height="192"
-          data-src="/assets/img/sideprojects/cornora.png"
-        />
-      </div>
-      <div class="col side-padding">
-        <h1 class="text-thin">Cornora</h1>
-        <p class="text-bigger">
-          Simple Hot Corner Launcher for any X11 Desktops. Alternative to Hot Corner feature in GNOME. Written in bash <br />
-          <a class="button button-small text-light" href="https://github.com/okitavera/cornora">GitHub</a>
-          <a class="button button-small text-light" href="https://aur.archlinux.org/packages/cornora-git/">AUR</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="sp sp-xl"></div>
-</section>
-{% include "recentarticle.njk" %} {% include "foot.njk" %}
+<div class="bg-lesslight">
+{% include "recentarticle.njk" %}
+</div>
+{% include "foot.njk" %}

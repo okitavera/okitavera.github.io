@@ -1,23 +1,22 @@
 {% set articles = collections.posts | head(-3) %}
-<section class="recent-article" id="recent-article">
+<section class="recent-article" id="recentarticles">
   <div class="container">
     <h2 class="text-thin" style="margin-top:0"><b>RECENT</b>ARTICLES</h2>
     <div class="row fx-nowrap items-stretch">
       {% for post in articles | reverse %}
-      <div class="col col-eq card">
-        <a href="{{ post.url | url }}">
+      <div class="col col-eq card bg-lightest center"><a href="{{ post.url | url }}">
         <div class="card-thumbnail bg-blackprint static" {% if post.data.splash.url %}style="background-image: url({{ post.data.splash.url }});background-size: cover"{% endif %}></div>
         <div class="card-context">
-          <time class="hashed uppercased text-dark text-smaller" datetime="{{ post.date | htmlDateString }}"><b>{{ post.date | readableDate }}</b></time>
-          <br><b>{{ post.data.title }}</b>
+          <div class="text-uppercase text-dark">{{ post.data.title }}</div>
+          <time class="text-smaller" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
         </div>
-        </a>
-      </div>
+        <div class="sp sp-s"></div>
+      </a></div>
       {% endfor %}
     </div>
     <div class="row center showmore">
       <div class="col">
-          <a href="/article/">View more</a>
+          <a href="/article/" class="button button-small text-light">View more post</a>
       </div>
     </div>
   </div>

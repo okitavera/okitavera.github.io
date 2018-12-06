@@ -38,6 +38,12 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("projects", function(collection) {
+    return collection.getFilteredByGlob("./projects/*").sort(function(a, b) {
+      return a.date - b.date;
+    });
+  });
+
   eleventyConfig.addShortcode("codeheader", function(context = "Title", title) {
     return `<div class="codeheader"><span>${context}: </span>${title}</div>`;
   });
@@ -50,7 +56,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if (outputPath.endsWith(".html") && !outputPath.includes("/feed/")) {
+    if (outputPath && outputPath.endsWith(".html") && !outputPath.includes("/feed/")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
