@@ -3,22 +3,22 @@
   background-color $colorAccent
 
 .bg-lightest
-  background-color #fff
+  background-color $colorLightest
+
+.bg-lighter
+  background-color $colorLighter
 
 .bg-light
   background-color $colorLight
-
-.bg-lesslight
-  background-color $colorLessLight
-
-.bg-lessdark
-  background-color $colorLessDark
 
 .bg-dark
   background-color $colorDark
 
 .bg-darker
-  background-color $colorMoreDark
+  background-color $colorDarker
+
+.bg-darkest
+  background-color $colorDarkest
 
 .bg-sideprint
   background-image url("data:image/svg+xml,%3Csvg width='5' height='5' space='preserve' version='1.1' viewBox='0 0 5 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5e-7 5e-7h5l-5 5z' opacity='.1' stroke-width='0' style='paint-order:normal'/%3E%3Cpath d='m5 5h-5l5-5z' opacity='.05' stroke-width='0' style='paint-order:normal'/%3E%3C/svg%3E%0A")
@@ -26,10 +26,10 @@
   background-size cover
 
 .bg-blackprint
-  background-color #000000
+  background-color black
   background-image url("data:image/svg+xml,%3Csvg width='100' height='100' version='1.1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23eee' fill-opacity='0.1'%3E%3Crect y='25' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect y='45' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect y='65' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect y='85' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect transform='rotate(90)' x='-4.1811e-15' y='-26' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect transform='rotate(90)' x='2.8167e-15' y='-46' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect transform='rotate(90)' x='4.0413e-15' y='-66' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect transform='rotate(90)' x='-6.3089e-17' y='-86' width='100' height='1' rx='0' opacity='.3' style='paint-order:normal'/%3E%3Crect y='5' width='100' height='1' rx='0' style='paint-order:normal'/%3E%3Crect transform='rotate(90)' x='-3.1854e-15' y='-5.9989' width='100' height='1' rx='0' style='paint-order:normal'/%3E%3C/g%3E%3C/svg%3E%0A")
   background-attachment fixed
   background-size 10rem
-  color $colorLight
+  color $colorLighter
   &.static
-    background-attachment: scroll
+    background-attachment scroll

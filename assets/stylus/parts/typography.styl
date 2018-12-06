@@ -7,7 +7,7 @@ h6
   display block
   font-weight normal
   b
-    font-weight: 900
+    font-weight 900
     font-size 0.95em
 
 h1
@@ -42,7 +42,7 @@ a
   text-decoration none
   &:focus,
   &:hover
-    color $colorLessDark
+    color $colorDark
 
 .typo-serif
   font-family $font_serif
@@ -53,13 +53,29 @@ a
 .typo-mono
   font-family $font_mono
 
+.text-lightest,
+a.text-lightest
+  color $colorLightest !important
+
+.text-lighter,
+a.text-lighter
+  color $colorLighter !important
+
 .text-light,
 a.text-light
   color $colorLight !important
 
 .text-dark,
 a.text-dark
-  color $colorDark !important
+  color $colorDarker !important
+
+.text-darker,
+a.text-darker
+  color $colorDarkest !important
+
+.text-darkest,
+a.text-darkest
+  color $colorDarkerest !important
 
 .text-uppercase
   text-transform uppercase

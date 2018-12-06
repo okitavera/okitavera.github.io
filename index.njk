@@ -8,7 +8,7 @@
           {% include 'components/okitavera.min.svg' %}
         </figure>
         <h5 class="animated fadeInUp">
-          <b class="desc text-light">kotlin & android dev | arch</b>
+          <b class="text-uppercase text-light">kotlin & android dev | arch</b>
         </h5>
       </div>
     </div>
@@ -30,7 +30,7 @@
     </div>
   </div>
 </section>
-<section class="about bg-lesslight" id="about">
+<section class="about bg-light" id="about">
   <div class="container height-stretch">
     <div class="row fx-nowrap items-mid">
       <div class="col center side-padding">
@@ -53,7 +53,7 @@
     </div>
   </div>
 </section>
-<section class="side-project-title bg-lessdark darken-bg text-light" id="sideprojects">
+<section class="side-project-title bg-dark text-light" id="sideprojects">
   <div class="container height-stretch">
     <div class="row items-mid">
       <div class="col">
@@ -64,7 +64,7 @@
       {% for project in collections.projects %}
       <div class="col col-eq side-padding card">
         <div class="card-thumbnail" style="background-image: url({{ project.data.img }})"></div>
-        <div class="card-context bg-dark">
+        <div class="card-context bg-darker">
           <h3 class="text-thin no-margin-y text-uppercase">{{ project.data.name }}</h3>
           <span class="text-smaller">{{ project.data.desc }}</span>
           <div><br>{{ project.templateContent | safe }}</div>
@@ -74,7 +74,7 @@
     </div>
   </div>
 </section>
-<div class="bg-lesslight">
+<div class="bg-light">
 {% include "recentarticle.njk" %}
 </div>
 {% include "foot.njk" %}

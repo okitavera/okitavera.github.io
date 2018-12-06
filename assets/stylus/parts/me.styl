@@ -1,45 +1,37 @@
-.start
-  h1
-    margin 0
-    color $colorDark
-  .desc
-    text-transform uppercase
-    letter-spacing 0.1rem
-
 @media screen and (max-width: $flexTreshold)
   .start
     .row
       flex-direction row
 
 .nav
-  border-bottom 1px solid $colorLesssLight
-  background $colorLight
-  transition: 0.2s ease-out all;
+  border-bottom 1px solid $colorLight
+  background $colorLighter
+  transition 0.2s ease-out all
   &.stay
-    width: 100vw
-    position: fixed
-    z-index: 99
-    & ~ div, ~ section
-      padding-top: 4rem
-   &.clears
+    position fixed
+    z-index 99
+    width 100vw
+    & ~ div,
+    ~ section
+      padding-top 4rem
+  &.clears
     border-color transparent
     background transparent
     a
-      color $colorLight
+      color $colorLighter
   .row
     flex-direction row
     height 4rem
     .links
       margin auto 1rem
       &:last-child
-        margin-right: 0
+        margin-right 0
       a
-        letter-spacing 0.1rem
         padding-bottom 0.5em
+        letter-spacing 0.1rem
         &:hover
           border-bottom 0.2em solid $colorAccent
           color $colorAccent
-
 
 .card
   margin 0 1rem 0 0
@@ -47,13 +39,12 @@
 
 .card
   .card-thumbnail
-    width: 100%
+    width 100%
     height 10rem
-    background-size: cover
-    background-position: center
+    background-position center
+    background-size cover
   .card-context
     padding 1rem
-
 
 .card:last-child
   margin 0
@@ -70,7 +61,7 @@
     margin-bottom 2rem
     .container
       padding 0
-      background-color #000000
+      background-color black
       box-shadow 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08)
       transition 0.18s ease-out
       &:hover
@@ -87,15 +78,19 @@
           background-color rgba(black, 0.8)
           transition 0.18s ease-out
       *
-        text-shadow 0px 3px 0px #4E4E4E
+        text-shadow 0px 3px 0px $colorDarker
 
 .darken-bg
   background-color rgba(black, 0.8)
 
 .copyright
+  padding 2rem 1rem 3rem
   text-transform uppercase
   letter-spacing 2px
-  font-size 85%
+  font-size 0.9rem
+  .row
+    :first-child
+      padding-bottom 2rem
 
 .post-credit-wrapper
   display flex
@@ -111,7 +106,7 @@
       text-transform uppercase
       font-weight 600 !important
     :last-child
-      color $colorDark
+      color $colorDarker
 
 .codeheader
   margin-top -0.5rem
@@ -127,7 +122,7 @@ header
       margin 0
       padding 0
       text-transform uppercase
-      text-shadow 0px 3px 0px #4E4E4E
+      text-shadow 0px 3px 0px $colorDarker
       font-weight bold
       font-family $font_sans
     h1
@@ -195,7 +190,7 @@ header
       animation-delay 1.78s
       stroke-dasharray 544
       stroke-dashoffset 544
-      stroke $colorLight
+      stroke $colorLighter
     .LSHDW
       opacity 0
       fill 0
@@ -212,15 +207,35 @@ header
   to
     stroke-dashoffset 0
 
-.friend-link > b
-  display none
-
-.friend-link:hover > b
-  position absolute
-  display block
-  padding 0.2rem 1rem
-  background $colorDark
-  color $colorLight
+.friends
+  .col
+    text-align center
+    a
+      position relative
+      display inline-block
+      margin 1rem
+      img,
+      span
+        position relative
+        display block
+        width 128px
+        height 128px
+      span
+        position absolute
+        top 0
+        left 0
+        border-radius 50%
+        background-color rgba($colorDarkest, 0.5)
+        opacity 0
+        transition 0.2s ease-out all
+      b
+        position relative
+        top calc(128px / 2 - 1rem)
+        color $colorLight
+        text-transform uppercase
+      &:hover
+        span
+          opacity 1
 
 .disqus
   overflow-x hidden
