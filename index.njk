@@ -1,36 +1,140 @@
 {% include "head.njk" %}
 <section class="start bg-blackprint animated fadeIn">
-  {% set nav_class = "clears" %}
-  {% include "navs.njk" %}
+  {% set nav_class = "clears" %} {% include "navs.njk" %}
   <div class="container height-stretch">
     <div class="row items-mid">
       <div class="col center">
         <figure class="ovlogo-canvas">
           {% include 'components/okitavera.min.svg' %}
         </figure>
-        <h5 class="animated fadeInUp"><b class="desc text-light">kotlin & android dev | arch</b></h5>
+        <h5 class="animated fadeInUp">
+          <b class="desc text-light">kotlin & android dev | arch</b>
+        </h5>
       </div>
     </div>
   </div>
 </section>
 <span class="clearsEnd"></span>
-<section class="about bg-lesslight" id="about">
+<section class="welcome bg-accent text-light">
   <div class="container">
     <div class="row fx-nowrap items-mid">
+      <div class="col center">
+        <h1 class="text-thin no-padding-y">Welcome!</h1>
+        <p class="text-bigger">
+          Hello there, Welcome to my page :)<br />
+          You can also jump into the my list of
+          <a class="button button-small button-ulined" href="/#sideproject"
+            >side-projects</a
+          >
+          or
+          <a class="button button-small button-ulined" href="/article"
+            >articles</a
+          >
+        </p>
+        <div class="sp"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about bg-lesslight" id="about">
+  <div class="container height-stretch">
+    <div class="row fx-nowrap items-mid">
       <div class="col center side-padding">
-        <img class="circle ---ll" alt="Prettiest human in the world" data-src="{{ metadata.author.photo }}?s=192">
+        <img
+          class="circle ---ll"
+          alt="Prettiest human in the world"
+          data-src="{{ metadata.author.photo }}?s=192"
+        />
       </div>
       <div class="col side-padding">
         <h1 class="text-thin"><b>ABOUT</b>ME</h1>
         <p class="left text-bigger">
-          <span class="uppercased">Hello!</span><br/>
-          I'm a psychologist and Android developer.<br/>
-          Primarily use Kotlin for Android development, but also do a bash and python for scripting.<br/>
-          Also I drink coffee, and love chocolate.
+          I'm a psychologist and Android developer.<br />
+          I do code for fun, just an another hobbies afterworks besides reading
+          a news or plays some melodic decadence metal music. Primarily use
+          Kotlin for Android development, but also do a bash and python for
+          scripting. Also I drink coffee, and love chocolate.
         </p>
       </div>
     </div>
   </div>
 </section>
-{% include "recentarticle.njk" %}
-{% include "foot.njk" %}
+<section class="side-project-title center bg-accent text-light" id="sideproject">
+  <div class="container">
+    <div class="row fx-nowrap items-mid">
+      <div class="col">
+        <h1 class="text-thin no-padding-y">SIDE<b>PROJECTS</b></h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="side-project center bg-blackprint text-light">
+  <div class="sp sp-l"></div>
+  <div class="container">
+    <div class="row fx-nowrap items-mid">
+      <div class="col col-sink side-padding">
+        <img
+          class="project-thumb ---ll"
+          alt="cornora"
+          width="192"
+          height="192"
+          data-src="/assets/img/sideprojects/crosshairhero.png"
+        />
+      </div>
+      <div class="col side-padding">
+        <h1 class="text-thin">Crosshair Hero</h1>
+        <p class="text-bigger">
+          Lightweight and Customizable Crosshair painter for android 4.4+<br/>
+          <a class="button button-small text-light" href="https://play.google.com/store/apps/details?id=me.okitastudio.crosshairherofps">Play Store</a>
+          <a class="button button-small text-light" href="https://apkpure.com/crosshair-hero-overlay-crosshair/me.okitastudio.crosshairherofps">APKPure</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row fx-nowrap items-mid">
+      <div class="col col-sink side-padding">
+        <img
+          class="project-thumb ---ll"
+          alt="clearine"
+          width="192"
+          height="192"
+          data-src="/assets/img/sideprojects/clearine.png"
+        />
+      </div>
+      <div class="col side-padding">
+        <h1 class="text-thin">Clearine</h1>
+        <p class="text-bigger">
+          Minimalist and configurable GTK-based Session/Logout manager for X11
+          window manager. Written in python. <br />
+          <a class="button button-small text-light" href="https://github.com/okitavera/clearine">GitHub</a>
+          <a class="button button-small text-light" href="https://aur.archlinux.org/packages/clearine-git/">AUR</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="sp sp-l"></div>
+  <div class="container">
+    <div class="row fx-nowrap items-mid">
+      <div class="col col-sink side-padding">
+        <img
+          class="project-thumb ---ll"
+          alt="cornora"
+          width="192"
+          height="192"
+          data-src="/assets/img/sideprojects/cornora.png"
+        />
+      </div>
+      <div class="col side-padding">
+        <h1 class="text-thin">Cornora</h1>
+        <p class="text-bigger">
+          Simple Hot Corner Launcher for any X11 Desktops. Alternative to Hot Corner feature in GNOME. Written in bash <br />
+          <a class="button button-small text-light" href="https://github.com/okitavera/cornora">GitHub</a>
+          <a class="button button-small text-light" href="https://aur.archlinux.org/packages/cornora-git/">AUR</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="sp sp-xl"></div>
+</section>
+{% include "recentarticle.njk" %} {% include "foot.njk" %}

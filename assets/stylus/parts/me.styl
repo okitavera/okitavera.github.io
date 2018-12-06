@@ -27,9 +27,12 @@
     a
       color $colorLight
   .row
+    flex-direction row
     height 4rem
     .links
       margin auto 1rem
+      &:last-child
+        margin-right: 0
       a
         letter-spacing 0.1rem
         padding-bottom 0.5em
@@ -37,10 +40,6 @@
           border-bottom 0.2em solid $colorAccent
           color $colorAccent
 
-@media screen and (max-width: 600px)
-  .nav
-    .row
-      flex-direction row
 
 .card
   margin 0 1rem 0 0
@@ -236,3 +235,7 @@ header
 
 .disqus
   overflow-x hidden
+
+.project-thumb
+  border-radius: 10px
+  box-shadow 0 5px 1px rgba(0, 0, 0, 0.125)
