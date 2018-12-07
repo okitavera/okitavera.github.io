@@ -18,4 +18,18 @@ overlayButton.onclick = function(){
   }
 };
 
+var backtotop = document.querySelector(".backtotop");
+backtotop.style.visibility = "hidden";
+backtotop.style.opacity = "0";
+window.onscroll = function(){
+  if (document.documentElement.scrollTop > document.documentElement.clientHeight 
+    || document.body.scrollTop > document.body.clientHeight) {
+    backtotop.style.visibility = "visible";
+    backtotop.style.opacity = "1";
+  } else {
+    backtotop.style.visibility = "hidden";
+    backtotop.style.opacity = "0";
+  }
+}
+
 })(window, document, 0);
