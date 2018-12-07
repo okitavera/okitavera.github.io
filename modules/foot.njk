@@ -24,27 +24,30 @@
   </footer>
 </div>
 <div class="owo">(つ▀¯▀)つ</div>
-<script async>
-{% include "components/smoothscroll.js" %}
+<script type="text/javascript" src="/assets/js/lazyload.min.js"></script>
+<script type="text/javascript" src="/assets/js/smooth-scroll.polyfills.min.js"></script>
+<script>
+window.lazyLoadOptions = { threshold: 0 };
+new LazyLoad({elements_selector: ".---ll"});  
+
 var scroll = new SmoothScroll('a[href*="#"]', {
-	header: '.stay',
 	topOnEmptyHash: true,
-	easing: 'easeInOutCubic',
+	easing: 'easeOutCubic',
 	updateURL: true,
 	popstate: true,
 	emitEvents: true
 });
 
-{% include "components/lazyload.min.js" %}
-window.lazyLoadOptions = { threshold: 0 };
-new LazyLoad({elements_selector: ".---ll"});  
-
 {% if disqus and metadata.disqus.username and metadata.disqus.enable == "true" %}
-  {% include "components/disqusLoader.js" %}
-  disqusLoader('.disqus',{ scriptUrl: '//{{ metadata.disqus.username }}.disqus.com/embed.js' });
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://{{ metadata.disqus.username }}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 {% endif %}
 
-{% include "components/okitavera.js" %}
+{% include "comps/okitavera.js" %}
 </script>
 </body>
 </html>

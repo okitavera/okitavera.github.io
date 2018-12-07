@@ -7,7 +7,7 @@ const URL = require('url').URL;
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection(
     "tagList",
-    require("./modules/components/get-tag-list.ety")
+    require("./modules/comps/get-tag-list.ety")
   );
   eleventyConfig.addPassthroughCopy("assets/img");
   eleventyConfig.addPlugin(pluginRss);
