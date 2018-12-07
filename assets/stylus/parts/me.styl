@@ -18,14 +18,6 @@
     padding 0.5rem
     border 1px solid $colorAccent
     color $colorAccent
-  &.stay
-    position fixed
-    top 0
-    left 0
-    z-index 999
-    width 100vw
-    & ~ .nav-reservation
-      padding-top 4rem
   &.clears
     border-color transparent
     background transparent
@@ -46,7 +38,7 @@
         border-bottom 0.2em solid $colorAccent
         color $colorAccent
   .mobile
-    display none
+    visibility hidden
     a
       display block
     span
@@ -66,29 +58,33 @@
 
 @media screen and (max-width: $flexTreshold)
   .nav
+    .logo
+      position relative
+      z-index 999
     .col.right:not(.mobile)
       display none
     .mobile
+      position relative
       z-index 999
-      display block
+      visibility visible
 
 .overlay-menu
+  transition all 0.5s ease-in-out
+  opacity: 0;
   position fixed
   top 0
   left 0
   z-index 998
-  display none
   overflow-y scroll
   width 100vw
-  height 100vh
+  height 100%
   background rgba(black, 95%)
+  .container
+    padding-top: 4rem
   .col
     padding 1rem
     border-top 1px solid $colorAccent
     border-bottom 1px solid $colorAccent
-  .header
-    padding 2rem 1rem
-    text-align center
   a
     font-size 2rem
     &:not(.logo)
