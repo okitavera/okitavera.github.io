@@ -1,7 +1,7 @@
 {% include "head.njk" %}
 {% set nav_class = "clears" %}
-{% include "navs.njk" %}
 <section class="start bg-blackprint">
+  {% include "navs.njk" %}
   <div class="container height-stretch">
     <div class="row items-mid animated fadeIn">
       <div class="col center">
@@ -31,7 +31,7 @@
   </div>
 </section>
 <section class="about bg-light" id="about">
-  <div class="container height-stretch">
+  <div class="container">
     <div class="row fx-nowrap items-mid">
       <div class="col center side-padding">
         <img class="circle ---ll" alt="Prettiest human in the world" data-src="{{ metadata.author.photo }}?s=150"/>
@@ -47,9 +47,10 @@
       </div>
     </div>
   </div>
+<div class="sp"></div>
 </section>
 <section class="side-project-title bg-dark text-light" id="sideprojects">
-  <div class="container height-stretch">
+  <div class="container">
     <div class="row items-mid">
       <div class="col">
         <h1 class="text-thin no-padding-y">SIDE<b>PROJECTS</b></h1>
@@ -68,6 +69,7 @@
     {% endfor %}
     </div>
   </div>
+<div class="sp"></div>
 </section>
 <div class="bg-light">
 {% include "recentarticle.njk" %}

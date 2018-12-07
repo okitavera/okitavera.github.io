@@ -1,7 +1,7 @@
 {% set articles = collections.posts | head(-3) %}
 <section class="recent-article" id="recentarticles">
   <div class="container">
-    <h2 class="text-thin" style="margin-top:0"><b>RECENT</b>ARTICLES</h2>
+    <h1 class="text-thin"><b>RECENT</b>ARTICLES</h1>
     <div class="row fx-nowrap items-stretch">
       {% for post in articles | reverse %}
       <div class="col col-eq card bg-lightest center"><a href="{{ post.url | url }}">
@@ -16,7 +16,9 @@
     </div>
     <div class="row center showmore">
       <div class="col">
+          <div class="sp sp-s"></div>
           <a href="/article/" class="button button-small text-light">View more post</a>
+          <div class="sp"></div>
       </div>
     </div>
   </div>

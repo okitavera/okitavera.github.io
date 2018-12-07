@@ -24,8 +24,7 @@
     left 0
     z-index 999
     width 100vw
-    & ~ div,
-    ~ section
+    & ~ .nav-reservation
       padding-top 4rem
   &.clears
     border-color transparent
@@ -145,14 +144,20 @@
 .darken-bg
   background-color rgba(black, 0.8)
 
+.owo
+  padding 1rem
+  text-align center
+  opacity 0
+  &:hover
+    opacity 1
+
 .copyright
-  padding 2rem 1rem 3rem
+  padding-top 2rem
   text-transform uppercase
   letter-spacing 2px
   font-size 0.9rem
-  .row
-    :first-child
-      padding-bottom 2rem
+  .row:last-child
+    padding 1rem
 
 .post-credit-wrapper
   display flex
