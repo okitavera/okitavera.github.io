@@ -1,7 +1,6 @@
-window.lazyLoadOptions = {
-  threshold: 0
-};
-new LazyLoad({elements_selector: ".---ll"});
+
+(function(window, document, index) {
+  "use strict";
 
 var overlayButton = document.querySelector("#ovm--btn");
 var overlayMenu = document.querySelector(".overlay-menu");
@@ -23,13 +22,11 @@ window.onscroll = function() {
   var point = alternav.offsetTop;
   if (document.body.scrollTop > point || document.documentElement.scrollTop > point) {
     navs.classList.remove("clears");
-    navs.classList.remove("big");
     navs.classList.add("alter");
   } else {
     navs.classList.add("clears");
-    navs.classList.add("big");
     navs.classList.remove("alter");
   }
 };
 
-disqusLoader('.disqus',{ scriptUrl: '//'+DISQUSNAME+'.disqus.com/embed.js' });
+})(window, document, 0);

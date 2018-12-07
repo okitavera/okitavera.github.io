@@ -23,13 +23,26 @@
   </footer>
 </div>
 <script async>
-  {% include "components/smoothscroll.js" %}
-  {% include "components/lazyload.min.js" %}
-  {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
-    {% include "components/disqusLoader.js" %}
-    var DISQUSNAME="{{ metadata.disqus.username }}";
-  {% endif %}
-  {% include "components/okitavera.js" %}
+{% include "components/smoothscroll.js" %}
+var scroll = new SmoothScroll('a[href*="#"]', {
+	header: '.stay',
+	topOnEmptyHash: true,
+	easing: 'easeInOutCubic',
+	updateURL: true,
+	popstate: true,
+	emitEvents: true
+});
+
+{% include "components/lazyload.min.js" %}
+window.lazyLoadOptions = { threshold: 0 };
+new LazyLoad({elements_selector: ".---ll"});  
+
+{% if disqus and metadata.disqus.username and metadata.disqus.enable == "true" %}
+  {% include "components/disqusLoader.js" %}
+  disqusLoader('.disqus',{ scriptUrl: '//{{ metadata.disqus.username }}.disqus.com/embed.js' });
+{% endif %}
+
+{% include "components/okitavera.js" %}
 </script>
 </body>
 </html>
