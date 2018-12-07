@@ -1,34 +1,35 @@
 
 (function(window, document, index) {
-  "use strict";
+"use strict";
 
-var overlayButton = document.querySelector("#ovm--btn");
+var visible = function(el, state){
+  el.style.visibility = (state == 1) && "visible" || "hidden";
+  el.style.opacity = state;  
+}
+
+var overlaylink = document.querySelectorAll("#ovm--btn,.overlay-menu a");
 var overlayMenu = document.querySelector(".overlay-menu");
-overlayMenu.style.visibility = "hidden";
-overlayMenu.style.opacity = "0";
-overlayButton.onclick = function(){
-  if (overlayMenu.style.visibility === "hidden") {
-    overlayMenu.style.visibility = "visible";
-    overlayMenu.style.opacity = "1";
-    overlayButton.classList.add("opened");
-  } else {
-    overlayMenu.style.opacity = "0";
-    overlayMenu.style.visibility = "hidden";
-    overlayButton.classList.remove("opened");
-  }
-};
+visible(overlayMenu, 0);
+Array.prototype.forEach.call(overlaylink, function(el){
+  el.onclick = function(){
+    var overlayButton = document.querySelector("#ovm--btn");
+    if (overlayMenu.style.visibility === "hidden") {
+      visible(overlayMenu, 1);
+      overlayButton.classList.add("opened");
+    } else {
+      visible(overlayMenu, 0);
+      overlayButton.classList.remove("opened");
+    }
+  }  
+});
 
 var backtotop = document.querySelector(".backtotop");
-backtotop.style.visibility = "hidden";
-backtotop.style.opacity = "0";
 window.onscroll = function(){
-  if (document.documentElement.scrollTop > document.documentElement.clientHeight 
-    || document.body.scrollTop > document.body.clientHeight) {
-    backtotop.style.visibility = "visible";
-    backtotop.style.opacity = "1";
+  var body = document.documentElement || document.body;
+  if (body.scrollTop > body.clientHeight || body.scrollTop > body.clientHeight) {
+    visible(backtotop, 1);
   } else {
-    backtotop.style.visibility = "hidden";
-    backtotop.style.opacity = "0";
+    visible(backtotop, 0);
   }
 }
 

@@ -69,18 +69,19 @@
       visibility visible
 
 .overlay-menu
-  transition all 0.5s ease-in-out
-  opacity: 0;
   position fixed
   top 0
   left 0
   z-index 998
+  visibility hidden
   overflow-y scroll
   width 100vw
   height 100%
   background rgba(black, 95%)
+  opacity 0
+  transition all 0.5s ease-in-out
   .container
-    padding-top: 4rem
+    padding-top 4rem
   .col
     padding 1rem
     border-top 1px solid $colorAccent
@@ -304,23 +305,23 @@ header
   overflow-x hidden
 
 .backtotop
-  position: fixed
+  position fixed
+  right 5rem
+  bottom 5rem
   visibility hidden
-  opacity: 0
-  bottom: 5rem
-  right: 5rem
-  text-align: center
-  width: 3rem
+  width 3rem
   height 3rem
-  line-height: 3rem
-  border-radius: 50%
-  transition 0.2s ease-out all
-  background: $colorDark
-  color $colorLight
-  transform: rotate(-90deg)
+  border-radius 50%
+  background $colorDark
   box-shadow 0 0 10px 0 rgba(0, 0, 0, 0.11)
+  color $colorLight
+  text-align center
+  line-height 3rem
+  opacity 0
+  transition 0.2s ease-out all
+  transform rotate(-90deg)
 
 @media screen and (max-width: $flexTreshold)
   .backtotop
-    right: 1rem
-    bottom: 2rem
+    right 1rem
+    bottom 2rem
