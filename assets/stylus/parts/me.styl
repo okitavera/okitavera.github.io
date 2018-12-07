@@ -6,32 +6,97 @@
 .nav
   border-bottom 1px solid $colorLight
   background $colorLighter
-  transition 0.2s ease-out all
+  &.alter
+    border 0
+    background rgba(black, 90%)
+    a
+      color $colorLighter
+    .mobile
+      span
+        background $colorLight
+  .logo
+    padding 0.5rem
+    border 1px solid $colorAccent
+    color $colorAccent
   &.stay
     position fixed
-    z-index 99
+    top 0
+    left 0
+    z-index 999
     width 100vw
     & ~ div,
     ~ section
       padding-top 4rem
+  &.big
+    .row
+      height 6rem
   &.clears
     border-color transparent
     background transparent
     a
       color $colorLighter
+    .mobile
+      span
+        background $colorLight
   .row
     flex-direction row
     height 4rem
-    .links
-      margin auto 1rem
-      &:last-child
-        margin-right 0
-      a
-        padding-bottom 0.5em
-        letter-spacing 0.1rem
-        &:hover
-          border-bottom 0.2em solid $colorAccent
-          color $colorAccent
+  .links
+    margin auto 1rem
+    a
+      padding-bottom 0.5em
+      letter-spacing 0.1rem
+      &:hover
+        border-bottom 0.2em solid $colorAccent
+        color $colorAccent
+  .mobile
+    display none
+    a
+      display block
+    span
+      display block
+      margin 0.55rem 0
+      width 1rem
+      height 0.1rem
+      border-radius 5px
+      background $colorAccent
+      content ''
+      transition 0.18s ease-out all
+    .opened
+      span:first-child
+        transform translateY(0.3rem) rotate(45deg)
+      span:last-child
+        transform translateY(-0.3rem) rotate(-45deg)
+
+@media screen and (max-width: $flexTreshold)
+  .nav
+    .col.right:not(.mobile)
+      display none
+    .mobile
+      z-index 999
+      display block
+
+.overlay-menu
+  position fixed
+  top 0
+  left 0
+  z-index 998
+  display none
+  overflow-y scroll
+  width 100vw
+  height 100vh
+  background rgba(black, 95%)
+  .col
+    padding 1rem
+    border-top 1px solid $colorAccent
+    border-bottom 1px solid $colorAccent
+  .header
+    padding 2rem 1rem
+    text-align center
+  a
+    font-size 2rem
+    &:not(.logo)
+      font-weight 900
 
 .card
   margin 0 1rem 0 0
