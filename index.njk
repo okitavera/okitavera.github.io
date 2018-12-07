@@ -1,8 +1,9 @@
 {% include "head.njk" %}
-<section class="start bg-blackprint animated fadeIn">
+{% set nav_class = "clears big" %}
+{% include "navs.njk" %}
+<section class="start bg-blackprint">
   <div class="container height-stretch">
-  {% set nav_class = "clears big" %} {% include "navs.njk" %}
-    <div class="row items-mid">
+    <div class="row items-mid animated fadeIn">
       <div class="col center">
         <figure class="ovlogo-canvas" id="alternavTrigger">
           {% include 'components/okitavera.min.svg' %}
