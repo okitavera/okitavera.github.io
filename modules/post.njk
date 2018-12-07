@@ -3,12 +3,12 @@
 {% set nav_class = "clears" %}
 {% include "head.njk" %}
 <div class="bg-blackprint animated fadeIn" {% if splash.url %} style="background-image: url({{ splash.url }});background-size:cover" {% endif %}>
-<div {% if splash %}class="darken-bg" {% endif %}>
+<div {% if splash %}style="background-color:rgba(0,0,0,0.65)"{% endif %}>
   {% include "navs.njk" %}
   <section class="container">
     <header class="row paper items-mid left">
       <div class="col animated zoomOut fast">
-        <time id="alternavTrigger" class="hashed text-light" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+        <time class="hashed text-light" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
         <h1>{{ title }}</h1>
       </div>
     </header>

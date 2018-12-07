@@ -1,19 +1,6 @@
-@media screen and (max-width: $flexTreshold)
-  .start
-    .row
-      flex-direction row
-
 .nav
   border-bottom 1px solid $colorLight
   background $colorLighter
-  &.alter
-    border 0
-    background rgba(black, 90%)
-    a
-      color $colorLighter
-    .mobile
-      span
-        background $colorLight
   .logo
     padding 0.5rem
     border 1px solid $colorAccent
@@ -56,18 +43,6 @@
       span:last-child
         transform translateY(-0.3rem) rotate(-45deg)
 
-@media screen and (max-width: $flexTreshold)
-  .nav
-    .logo
-      position relative
-      z-index 999
-    .col.right:not(.mobile)
-      display none
-    .mobile
-      position relative
-      z-index 999
-      visibility visible
-
 .overlay-menu
   position fixed
   top 0
@@ -107,13 +82,6 @@
 .card:last-child
   margin 0
 
-@media screen and (max-width: $flexTreshold)
-  .card
-    margin 0 0 1rem
-
-.showmore
-  margin-top 1rem
-
 .article-index
   .article-item
     margin-bottom 2rem
@@ -137,9 +105,6 @@
           transition 0.18s ease-out
       *
         text-shadow 0px 3px 0px $colorDarker
-
-.darken-bg
-  background-color rgba(black, 0.8)
 
 .owo
   padding 1rem
@@ -221,17 +186,6 @@ header
     &:hover > .direct-link
       visibility visible
 
-@media screen and (max-width: $flexTreshold)
-  header
-    &.paper
-      flex-direction row
-      min-height 15rem
-      h1
-        max-width 100%
-        font-size 4em
-        font-size 8vw
-        line-height 1.2
-
 .ovlogo-canvas
   display block
   margin 0
@@ -258,14 +212,6 @@ header
     .LSHDW
       opacity 0
       fill 0
-
-@media screen and (max-width: 512px)
-  .ovlogo-canvas
-    svg
-      max-width 100%
-      max-height auto
-      width 100%
-      height auto
 
 @keyframes dash
   to
@@ -301,9 +247,6 @@ header
         span
           opacity 1
 
-.disqus
-  overflow-x hidden
-
 .backtotop
   position fixed
   right 5rem
@@ -325,3 +268,33 @@ header
   .backtotop
     right 1rem
     bottom 2rem
+  .ovlogo-canvas
+    svg
+      max-width 100%
+      max-height auto
+      width 100%
+      height auto
+  header
+    &.paper
+      flex-direction row
+      min-height 15rem
+      h1
+        max-width 100%
+        font-size 4em
+        font-size 8vw
+        line-height 1.2
+  .start
+    .row
+      flex-direction row
+  .nav
+    .logo
+      position relative
+      z-index 999
+    .col.right:not(.mobile)
+      display none
+    .mobile
+      position relative
+      z-index 999
+      visibility visible
+  .card
+    margin 0 0 1rem

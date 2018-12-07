@@ -13,9 +13,9 @@ title: Article Index
     {% for post in articles | reverse %}
       <a href="{{ post.url | url }}"><article class="article-item bg-accent">
         <div class="container bg-blackprint static" {% if post.data.splash.url %}style="background-image: url({{ post.data.splash.url }});background-size: cover"{% endif %}>
-          <div class="row items-mid  {% if post.data.splash %}has-splash{% endif %}"><div class="col">
+          <div class="row items-mid {% if post.data.splash %}has-splash{% endif %}"><div class="col">
             <div class="sp sp-xs"></div>
-            <time class="hashed uppercased text-light" datetime="{{ post.date | htmlDateString }}">
+            <time class="hashed text-uppercase text-light" datetime="{{ post.date | htmlDateString }}">
               <b>{{ post.date | readableDate }}</b>
             </time>
             <h1 class="text-light"><b>

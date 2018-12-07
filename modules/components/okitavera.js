@@ -26,7 +26,7 @@ Array.prototype.forEach.call(overlaylink, function(el){
 var backtotop = document.querySelector(".backtotop");
 window.onscroll = function(){
   var body = document.documentElement || document.body;
-  if (body.scrollTop > body.clientHeight || body.scrollTop > body.clientHeight) {
+  if (body.scrollTop > body.clientHeight) {
     visible(backtotop, 1);
   } else {
     visible(backtotop, 0);
