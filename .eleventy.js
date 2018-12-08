@@ -3,58 +3,55 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 const {URL} = require("url");
 const {DateTime} = require("luxon");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addCollection(
-    "tagList",
-    require("./modules/comps/get-tag-list.ety")
-  );
-  eleventyConfig.addPassthroughCopy("assets/img");
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+module.exports = (elly) => {
+  elly.addPassthroughCopy("assets/img");
 
-  eleventyConfig.addFilter("lastWord", words => {
+  elly.addPlugin(pluginRss);
+
+  elly.addPlugin(pluginSyntaxHighlight);
+
+  elly.addFilter("head", (arr, n) => {
+    return n < 0 ? arr.slice(n) : arr.slice(0, n);
+  });
+
+  elly.addFilter("lastWord", (words) => {
     return words.split(" ").splice(-1);
   });
 
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: "utc"}).toFormat(
-      "LLLL dd, yyyy"
-    );
+  elly.addFilter("readableDate", (date) => {
+    return DateTime.fromJSDate(date, {zone: "utc"}).toFormat("LLLL dd, yyyy");
   });
 
-  eleventyConfig.addFilter("htmlDateString", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-LL-dd");
+  elly.addFilter("htmlDateString", (date) => {
+    return DateTime.fromJSDate(date).toFormat("yyyy-LL-dd");
   });
 
-  eleventyConfig.addFilter("getHostnameFromUrl", base => {
-    return new URL(base).hostname;
+  elly.addFilter("getHostnameFromUrl", (url) => {
+    return new URL(url).hostname;
   });
 
-  eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getFilteredByGlob("./article/*").sort(function(a, b) {
+  elly.addCollection("posts", (all) => {
+    return all.getFilteredByGlob("./article/*").sort((a, b) => {
       return a.date - b.date;
     });
   });
 
-  eleventyConfig.addCollection("projects", function(collection) {
-    return collection.getFilteredByGlob("./projects/*").sort(function(a, b) {
+  elly.addCollection("tagList", require("./modules/comps/get-tag-list.ety"));
+
+  elly.addCollection("projects", (all) => {
+    return all.getFilteredByGlob("./projects/*").sort((a, b) => {
       return a.date - b.date;
     });
   });
 
-  eleventyConfig.addShortcode("codeheader", function(context = "Title", title) {
+  elly.addShortcode("codeheader", (context = "Title", title) => {
     return `<div class="codeheader"><span>${context}: </span>${title}</div>`;
   });
 
-  eleventyConfig.addFilter("head", (array, n) => {
-    if (n < 0) {
-      return array.slice(n);
-    }
-    return array.slice(0, n);
-  });
-
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  elly.addTransform("htmlmin", (content, outputPath) => {
     if (
       outputPath &&
       outputPath.endsWith(".html") &&
@@ -71,10 +68,7 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
-
-  eleventyConfig.setLibrary(
+  elly.setLibrary(
     "md",
     markdownIt({
       html: true,

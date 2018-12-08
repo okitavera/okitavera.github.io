@@ -29,7 +29,7 @@ var stylwatch = () => {
   return gulp.watch("assets/stylus/**", gulp.series(stylbuild));
 };
 
-var personal = res => {
+var personal = (res) => {
   if (!fs.existsSync("build")) {
     fs.mkdirSync("build");
   }
@@ -51,7 +51,7 @@ var asset = (repo, file) => {
     .pipe(gulp.dest("build/assets/js"));
 };
 
-var assets = cb => {
+var assets = (cb) => {
   asset("vanilla-lazyload", "dist/**");
   asset("smooth-scroll", "dist/**");
   return cb();
