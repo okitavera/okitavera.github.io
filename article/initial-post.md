@@ -6,6 +6,6 @@ tags:
 layout: post.njk
 ---
 
-Did I just make another *will-be-abandoned-by-time* website things ?
+Did I just make another _will-be-abandoned-by-time_ website things ?
 
 Jesus.

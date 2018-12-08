@@ -1,0 +1,10 @@
+jsxBracketSameLine: true
+bracketSpacing: false
+endOfLine: "lf"
+useTabs: false
+singleQuote: false
+semi: true
+overrides:
+  - files: ".prettierrc"
+    options:
+      parser: yaml

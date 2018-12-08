@@ -1,8 +1,8 @@
-const { DateTime } = require("luxon");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
-const URL = require('url').URL;
+const {URL} = require("url");
+const {DateTime} = require("luxon");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection(
@@ -13,13 +13,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
-
   eleventyConfig.addFilter("lastWord", words => {
     return words.split(" ").splice(-1);
   });
 
   eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+    return DateTime.fromJSDate(dateObj, {zone: "utc"}).toFormat(
       "LLLL dd, yyyy"
     );
   });
@@ -56,7 +55,11 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html") && !outputPath.includes("/feed/")) {
+    if (
+      outputPath &&
+      outputPath.endsWith(".html") &&
+      !outputPath.includes("/feed/")
+    ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,

@@ -6,6 +6,7 @@ tags:
   - linux
 layout: post.njk
 ---
+
 The `/bin/sh` is usually a symlink to the system default shell.
 It maybe a simple ways to do, especially for those who write the script in a pure POSIX shell.
 But if you're write a bash script, that's definitely not a good idea.
@@ -24,8 +25,8 @@ If you write a bash script and your script looks like this :
 
 # your magical formulas here
 ```
-Your script usually does not works well on every system that doesn't use bash as their default shell.
 
+Your script usually does not works well on every system that doesn't use bash as their default shell.
 
 ## the right ways
 

@@ -13,7 +13,7 @@ So I decide to give a try for the arch linux.
 Because last time, I had a good experience for running arch on the FX-9830P, thanks to the great opensource amdgpu drivers.
 
 First time, I booting up the arch liveiso via my android device.
-Setting-up the partition, pacstrapping the root, install some X programs. 
+Setting-up the partition, pacstrapping the root, install some X programs.
 Well, so far so good.
 
 Booting up to the partition, plays music on youtube, and doing some configuration stuff, and boom, everything suddenly refusing to respond my input.
@@ -36,6 +36,7 @@ I found the awesome python script for that, https://github.com/r4m0n/ZenStates-L
 ```bash
 ./zenstates --c6-disable
 ```
+
 And it works pretty well, there's no more lockups.
 So I decide to make it start on boot by creating the systemd service like this :
 
@@ -57,6 +58,6 @@ WantedBy=basic.target
 ```
 
 That's pretty strange for me, I don't really know what is going on. but yeah, as long as it works.
-But I'm still dissapointed by having a bad experience on Windows, that's ridiculous tho, since they're targeting the mainstream users. 
+But I'm still dissapointed by having a bad experience on Windows, that's ridiculous tho, since they're targeting the mainstream users.
 
 I just hope they'll get into it soon, AMD is awesome before, especially for having a good FineWine drivers.
