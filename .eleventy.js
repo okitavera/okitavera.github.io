@@ -1,57 +1,93 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const htmlmin = require("html-minifier");
-const {URL} = require("url");
 const {DateTime} = require("luxon");
+const {URL} = require("url");
+const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-module.exports = (elly) => {
-  elly.addPassthroughCopy("assets/img");
+module.exports = (eleventy) => {
+  // js and styluses are processed by gulp
+  // so we only copy imgs and fonts
+  eleventy.addPassthroughCopy("assets/img");
+  eleventy.addPassthroughCopy("assets/fonts");
+  eleventy.addPlugin(pluginRss);
+  eleventy.addPlugin(pluginSyntaxHighlight);
 
-  elly.addPlugin(pluginRss);
-
-  elly.addPlugin(pluginSyntaxHighlight);
-
-  elly.addFilter("head", (arr, n) => {
-    return n < 0 ? arr.slice(n) : arr.slice(0, n);
-  });
-
-  elly.addFilter("lastWord", (words) => {
+  eleventy.addFilter("lastWord", (words) => {
     return words.split(" ").splice(-1);
   });
 
-  elly.addFilter("readableDate", (date) => {
-    return DateTime.fromJSDate(date, {zone: "utc"}).toFormat("LLLL dd, yyyy");
+  eleventy.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: "utc"}).toFormat(
+      "LLLL dd, yyyy"
+    );
   });
 
-  elly.addFilter("htmlDateString", (date) => {
-    return DateTime.fromJSDate(date).toFormat("yyyy-LL-dd");
+  eleventy.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toFormat("yyyy-LL-dd");
   });
 
-  elly.addFilter("getHostnameFromUrl", (url) => {
-    return new URL(url).hostname;
+  eleventy.addFilter("getHostnameFromUrl", (base) => {
+    return new URL(base).hostname;
   });
 
-  elly.addCollection("posts", (all) => {
-    return all.getFilteredByGlob("./article/*").sort((a, b) => {
+  eleventy.addCollection("posts", (collection) => {
+    return collection.getFilteredByGlob("./article/*.md").sort((a, b) => {
       return a.date - b.date;
     });
   });
 
-  elly.addCollection("tagList", require("./modules/comps/get-tag-list.ety"));
+  eleventy.addCollection("tags", (collection) => {
+    let tagSet = new Set();
+    collection.getAllSorted().forEach((item) => {
+      if ("tags" in item.data) {
+        let tags = item.data.tags;
+        if (typeof tags === "string") {
+          tags = [tags];
+        }
 
-  elly.addCollection("projects", (all) => {
-    return all.getFilteredByGlob("./projects/*").sort((a, b) => {
+        tags = tags.filter((item) => {
+          switch (item) {
+            // this list should match the `filter` list in tags.njk
+            case "all":
+            case "nav":
+            case "post":
+            case "posts":
+              return false;
+          }
+
+          return true;
+        });
+
+        for (const tag of tags) {
+          tagSet.add(tag);
+        }
+      }
+    });
+    // returning an array in addCollection works in Eleventy 0.5.3
+    return [...tagSet];
+  });
+
+  eleventy.addCollection("projects", (collection) => {
+    return collection.getFilteredByGlob("./projects/*").sort((a, b) => {
       return a.date - b.date;
     });
   });
 
-  elly.addShortcode("codeheader", (context = "Title", title) => {
+  eleventy.addShortcode("codeheader", (context = "Title", title) => {
     return `<div class="codeheader"><span>${context}: </span>${title}</div>`;
   });
 
-  elly.addTransform("htmlmin", (content, outputPath) => {
+  eleventy.addFilter("head", (array, n) => {
+    if (n < 0) {
+      return array.slice(n);
+    }
+    return array.slice(0, n);
+  });
+
+  eleventy.addTransform("htmlmin", (content, outputPath) => {
+    // atom feed can't be minified
     if (
       outputPath &&
       outputPath.endsWith(".html") &&
@@ -68,7 +104,7 @@ module.exports = (elly) => {
     return content;
   });
 
-  elly.setLibrary(
+  eleventy.setLibrary(
     "md",
     markdownIt({
       html: true,
