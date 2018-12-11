@@ -19,7 +19,7 @@
     <meta content="{{ tag }}" property="article:tag">
     {% endfor %}
   {% endif %}
-  <meta content="{{ splash or metadata.author.photo }}" property="og:image">
+  <meta content="{{ splash.url or metadata.author.photo }}" property="og:image">
   <title>{{ posttitle or renderData.title or title or metadata.title }}</title>
   <link rel="canonical" href="{{ metadata.url + page.url }}">
   <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
