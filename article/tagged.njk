@@ -8,20 +8,38 @@ renderData:
   title: Tagged “{{ tag }}”
 permalink: /article/tags/{{ tag }}/
 ---
-<div class="container legacy">
-  <h1 class="text-thin"><b>POST</b>TAGS</h1>
-  {% for _tag in collections.tags %}
-    <a href="/article/tags/{{ _tag }}" class="button button-small{% if tag == _tag %}{% else %} button-outline{% endif %}">{{ _tag }}</a>
-  {% endfor %}
-  <hr class="sp">
-  {% set articles = collections[ tag ] %}
-  <div class="article-index">
+<div class="bg-lighter">
+<section class="container no-padding-y">
+  <h1 class="text-thin center">TAGGED<b>ARTICLES</b></h1>
+  <div class="center">
+    {% for _tag in collections.tags %}
+      <a href="/article/tags/{{ _tag }}" class="button button-small{% if tag == _tag %}{% else %} button-outline{% endif %}">{{ _tag }}</a>
+    {% endfor %}
+  </div>
+  <div class="sp"></div>
+  <div class="article-index center">
+    {% set articles = collections[ tag ] %}
     {% for post in articles | reverse %}
-      <article>
-        <time class="hashed text-uppercase text-dark text-smaller" datetime="{{ post.date | htmlDateString }}"><b>{{ post.date | readableDate }}</b></time><br/>
-        <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-      </article>
+      <a href="{{ post.url | url }}"><article class="article-item bg-accent">
+        <div class="container bg-blackprint static" {% if post.data.splash.url %}style="background-image: url({{ post.data.splash.url }});background-size: cover"{% endif %}>
+          <div class="row items-mid {% if post.data.splash %}has-splash{% endif %}"><div class="col">
+            <div class="sp sp-xs"></div>
+            <time class="hashed text-uppercase text-light" datetime="{{ post.date | htmlDateString }}">
+              <b>{{ post.date | readableDate }}</b>
+            </time>
+            <h1 class="text-light"><b>
+                  {% if post.data.title %}
+                    {{ post.data.title }}
+                  {% else %}
+                    <code>{{ post.url }}</code>
+                  {% endif %}
+                </b></h1>
+            <div class="sp sp-xs"></div>
+          </div></div>
+        </div>
+      </article></a>
       <div class="sp sp-xs"></div>
     {% endfor %}
   </div>
+</section>
 </div>
