@@ -58,15 +58,15 @@
     </div>
     <div class="row items-stretch">
       {% for project in collections.projects %}
-      <div class="col col-eq side-padding card bg-light" style="display:flex;flex-direction:column">
+      <div class="col col-eq side-padding card bg-darkest text-light">
         <div class="card-thumbnail">
           <img class="---ll" data-src="{{ project.data.img }}">
         </div>
-        <div class="card-context" style="padding-bottom:0">
+        <div class="card-context">
           <h3 class="text-thin no-margin-y text-uppercase">{{ project.data.name }}</h3>
           <span class="text-smaller">{{ project.data.desc }}</span>
         </div>
-        <div class="card-context" style="margin-top:auto">
+        <div class="card-footer">
           {{ project.templateContent | safe }}
         </div>
       </div>

@@ -1,0 +1,27 @@
+.card
+  display flex !important
+  flex-direction column
+  margin 0 1rem 0 0
+  padding 0 !important
+  box-shadow 0 1px 5px #dcdcdc
+  &:last-child
+    margin 0
+  .card-thumbnail
+    overflow hidden
+    width 100%
+    height 10rem
+    background-color black
+    img
+      min-height 100%
+      width 100%
+      opacity 0.8
+  .card-context,
+  .card-footer
+    padding 1rem
+  .card-footer
+    margin-top auto
+    padding-top 0
+
+@media screen and (max-width: $flexTreshold)
+  .card
+    margin 0 0 1rem
