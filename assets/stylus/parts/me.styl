@@ -1,72 +1,3 @@
-.nav
-  border-bottom 1px solid $colorLight
-  background $colorLighter
-  .logo
-    padding 0.5rem
-    border 1px solid $colorAccent
-    color $colorAccent
-  &.clears
-    border-color transparent
-    background transparent
-    a
-      color $colorLighter
-    .mobile
-      span
-        background $colorLight
-  .row
-    flex-direction row
-    height 4rem
-  .links
-    margin auto 1rem
-    a
-      padding-bottom 0.5em
-      letter-spacing 0.1rem
-      &:hover
-        border-bottom 0.2em solid $colorAccent
-        color $colorAccent
-  .mobile
-    visibility hidden
-    width 0
-    a
-      display block
-    span
-      display block
-      margin 0.55rem 0
-      width 1rem
-      height 0.1rem
-      border-radius 5px
-      background $colorAccent
-      content ''
-      transition 0.18s ease-out all
-    .opened
-      span:first-child
-        transform translateY(0.3rem) rotate(45deg)
-      span:last-child
-        transform translateY(-0.3rem) rotate(-45deg)
-
-.overlay-menu
-  position fixed
-  top 0
-  left 0
-  z-index 998
-  visibility hidden
-  overflow-y scroll
-  width 100vw
-  height 100%
-  background rgba(black, 95%)
-  opacity 0
-  transition all 0.5s ease-in-out
-  .container
-    padding-top 5rem
-  .col
-    padding 1rem
-    border-top 1px solid $colorAccent
-    border-bottom 1px solid $colorAccent
-  a
-    font-size 2rem
-    &:not(.logo)
-      font-weight 700
-
 .article-index
   .article-item
     margin-bottom 2rem
@@ -269,17 +200,6 @@ header
   .start
     .row
       flex-direction row
-  .nav
-    .logo
-      position relative
-      z-index 999
-    .col.right:not(.mobile)
-      display none
-    .mobile
-      position relative
-      z-index 999
-      visibility visible
-      width unset
 
 .splash-credit
   padding 0.5rem

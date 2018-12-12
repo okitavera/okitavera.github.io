@@ -3,8 +3,8 @@
     el.style.visibility = state === 1 ? "visible" : "hidden";
     el.style.opacity = state;
   };
-  const overlaylink = document.querySelectorAll("#ovm--btn,.overlay-menu a");
-  const overlayMenu = document.querySelector(".overlay-menu");
+  const overlaylink = document.querySelectorAll("#ovm--btn,.mobile-menu a");
+  const overlayMenu = document.querySelector(".mobile-menu");
   visible(overlayMenu, 0);
   overlaylink.forEach((el) => {
     el.onclick = () => {
