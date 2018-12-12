@@ -1,14 +1,14 @@
-((win, doc) => {
+(() => {
   const visible = (el, state) => {
     el.style.visibility = state === 1 ? "visible" : "hidden";
     el.style.opacity = state;
   };
-  const overlaylink = doc.querySelectorAll("#ovm--btn,.overlay-menu a");
-  const overlayMenu = doc.querySelector(".overlay-menu");
+  const overlaylink = document.querySelectorAll("#ovm--btn,.overlay-menu a");
+  const overlayMenu = document.querySelector(".overlay-menu");
   visible(overlayMenu, 0);
   overlaylink.forEach((el) => {
     el.onclick = () => {
-      const overlayButton = doc.querySelector("#ovm--btn");
+      const overlayButton = document.querySelector("#ovm--btn");
       const state = overlayMenu.style.visibility === "hidden" ? 1 : 0;
       visible(overlayMenu, state);
       state
@@ -17,10 +17,16 @@
     };
   });
 
-  const body = doc.documentElement || doc.body;
-  win.onscroll = () =>
-    visible(
-      doc.querySelector(".backtotop"),
-      body.scrollTop > body.clientHeight ? 1 : 0
-    );
+  const body = document.documentElement || document.body;
+  var scrolling = false;
+  window.onscroll = () => (scrolling = true);
+  setInterval(() => {
+    if (scrolling) {
+      scrolling = false;
+      visible(
+        document.querySelector(".backtotop"),
+        body.scrollTop > body.clientHeight / 4 ? 1 : 0
+      );
+    }
+  }, 250);
 })(window, document);
