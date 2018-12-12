@@ -36,12 +36,16 @@ const extasset = (repo, file) =>
 const assets = (done) => {
   extasset("vanilla-lazyload", "dist/**");
   extasset("smooth-scroll", "dist/**");
+  return done();
+};
+
+const nextjs = () =>
   gulp
     .src("assets/js/**")
     .pipe(babel())
     .pipe(gulp.dest("build/assets/js"));
-  return done();
-};
+
+const nextjswatch = () => gulp.watch("assets/js/**", gulp.parallel(nextjs));
 
 const personal = (done) => {
   !fs.existsSync("build") && fs.mkdirSync("build");
@@ -54,13 +58,14 @@ const personal = (done) => {
   );
 };
 
-const prepareAssets = gulp.parallel(stylusbuild, personal, assets);
+const prepareAssets = gulp.parallel(stylusbuild, personal, assets, nextjs);
 
 gulp.task(
   "serve",
   gulp.parallel(
+    gulp.series(cleanup, prepareAssets, shell.task("eleventy --serve")),
     styluswatch,
-    gulp.series(cleanup, prepareAssets, shell.task("eleventy --serve"))
+    nextjswatch
   )
 );
 
