@@ -37,25 +37,27 @@
 <script type="text/javascript" src="/assets/js/smooth-scroll.polyfills.min.js"></script>
 <script type="text/javascript" src="/assets/js/okitavera.js"></script>
 <script>
-window.lazyLoadOptions = { threshold: 0 };
-new LazyLoad({elements_selector: ".---ll"});
+(function () {
+  new LazyLoad({
+    elements_selector: ".---ll"
+  });
 
-var scroll = new SmoothScroll('a[href*="#"]', {
-	topOnEmptyHash: true,
-	easing: 'easeOutCubic',
-	updateURL: true,
-	popstate: true,
-	emitEvents: true
-});
+  new SmoothScroll('a[href*="#"]', {
+    topOnEmptyHash: true,
+    easing: 'easeOutCubic',
+    updateURL: true,
+    popstate: true,
+    emitEvents: true
+  });
 
 {% if disqus and metadata.disqus.username and metadata.disqus.enable == "true" %}
-  (function() {
     var d = document, s = d.createElement('script');
     s.src = 'https://{{ metadata.disqus.username }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
-  })();
 {% endif %}
+
+})();
 </script>
 </body>
 </html>
