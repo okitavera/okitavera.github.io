@@ -147,7 +147,7 @@ header
   &.paper
     margin auto
     min-height 20rem
-    max-width 800px
+    max-width $paperMaxWidth
     width 100%
     h1,
     time
@@ -167,7 +167,7 @@ header
 
 .paper
   margin auto
-  max-width 800px
+  max-width $paperMaxWidth
   width 100%
   font-size 1.1em
   h1,
@@ -298,3 +298,11 @@ header
       width unset
   .card
     margin 0 0 1rem
+
+.splash-credit
+  padding 0.5rem
+  color $colorLight
+  text-align right
+  opacity 0.8
+  a
+    color $colorLight
