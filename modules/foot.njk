@@ -1,4 +1,4 @@
-<a href="#top" class="backtotop">➜</a>
+<a href="#" class="backtotop">➜</a>
 <div class="bg-darkest text-light main-footer">
   <footer class="container copyright">
     <div class="row">
@@ -44,10 +44,12 @@
 
   new SmoothScroll('a[href*="#"]', {
     topOnEmptyHash: true,
-    easing: 'easeOutCubic',
+    easing: 'easeOutQuint',
     updateURL: true,
     popstate: true,
-    emitEvents: true
+    emitEvents: true,
+    speed: 500,
+	  speedAsDuration: true
   });
 
 {% if disqus and metadata.disqus.username and metadata.disqus.enable == "true" %}
