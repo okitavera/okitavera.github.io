@@ -2,7 +2,7 @@
 title: "Do Websites Need To Look Exactly Same In Every Browsers ?"
 date: 2018-12-11
 tags:
-  - webdesign
+  - web-development
   - shitpost
 layout: post.njk
 splash:
