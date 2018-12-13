@@ -22,12 +22,29 @@ body
   margin-top auto
 
 blockquote
-  margin-right 0
-  margin-left 0
-  padding 1rem
-  border-left 0.3rem solid $colorLight[3]
-  *:last-child
-    margin-bottom 0
+  position relative
+  display inline-block
+  margin 0 1rem 1rem 0
+  padding 0.2rem 3rem
+  background $colorLight[0]
+  box-shadow 0 1px 1px rgba(0, 0, 0, 0.125)
+  color #555555
+  font-style italic
+
+blockquote::before
+  position absolute
+  top -10px
+  left 10px
+  color lighten($colorAccent, 30%)
+  content '\201C'
+  font-size 4em
+
+blockquote span
+  display block
+  margin-top 0.5em
+  color $colorDark[1]
+  text-align right
+  font-size 80%
 
 hr
   margin 1rem 0
