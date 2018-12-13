@@ -1,11 +1,14 @@
 ---
-title: "Install npm packages secara user-specific layaknya pro"
+title: "Install npm packages Secara User-specific Layaknya Pro"
 date: 2018-12-13
 tags:
   - npm
   - nodejs
   - web-development
 layout: post.njk
+splash:
+  url: "/assets/img/articles/splashes/npm-install-user.jpg"
+  credit: "Image: https://unsplash.com/photos/k03ornGON08"
 ---
 
 Seperti yang kamu tau, secara default `npm install -g` akan menginstall packages secara global agar bisa dipakai tanpa harus masuk ke folder node project kamu, yang pasti sangat membantu sekali terutama pada packages yang mempunyai cli interfaces seperti `gulp`, `webpack`, `gylphhanger`, dan sejenisnya.
