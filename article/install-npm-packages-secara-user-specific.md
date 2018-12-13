@@ -26,6 +26,9 @@ Dan juga, beberapa orang juga tidak suka mengetik sudo.
 > "I ask you one better, why's sudo ?"
 > <span>Drax the Destroyer</span>
 
+> "Subscribe to PewDiePie"
+> <span>HackerGiraffe</span>
+
 Lalu, bagaimana solusinya ?
 Kita atur lokasi npm packages nya di user directory, Huuray!
 
