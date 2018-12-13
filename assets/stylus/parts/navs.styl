@@ -1,9 +1,9 @@
 .nav
-  background $colorLighter
+  background $colorLight[1]
   .logo
     padding 0.5rem
-    border 1px solid $colorDark
-    color $colorDark
+    border 1px solid $colorDark[2]
+    color $colorDark[2]
   .row
     flex-direction row
     height 8rem
@@ -11,12 +11,12 @@
     margin auto 0.8rem
     a
       padding-bottom 0.5em
-      color $colorDark
+      color $colorDark[2]
       letter-spacing 1px
       font-size 0.87rem
       &:hover
         border-bottom 2px solid $colorAccent
-        color $colorDark
+        color $colorDark[2]
   .mobile-menu-btn
     visibility hidden
     width 0
@@ -29,7 +29,7 @@
       width 2rem
       height 4px
       border-radius 5px
-      background $colorLight
+      background $colorLight[2]
       content ''
       transition all 0.25s ease-out
     .opened
@@ -41,15 +41,15 @@
     border-color transparent
     background transparent
     .logo
-      border 1px solid $colorLight
-      color $colorLight
+      border 1px solid $colorLight[2]
+      color $colorLight[2]
     .mobile-menu-btn
       span
-        background $colorLight
+        background $colorLight[2]
     .links
       a,
       a:hover
-        color $colorLight
+        color $colorLight[2]
 
 .mobile-menu
   position fixed

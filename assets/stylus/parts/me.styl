@@ -20,7 +20,7 @@
           background-color rgba(black, 0.8)
           transition 0.18s ease-out
       *
-        text-shadow 0px 3px 0px $colorDarker
+        text-shadow 0px 3px 0px $colorDark[1]
 
 .owo
   padding 1rem
@@ -36,7 +36,7 @@
   font-size 0.9rem
   .jumps a
     padding 2px 0.6rem
-    color $colorLight
+    color $colorLight[2]
     font-size 0.8rem
 
 .post-credit-wrapper
@@ -53,7 +53,7 @@
       text-transform uppercase
       font-weight 700 !important
     :last-child
-      color $colorDarker
+      color $colorDark[1]
 
 .codeheader
   margin-top -0.5rem
@@ -69,7 +69,7 @@ header
       margin 0
       padding 0
       text-transform uppercase
-      text-shadow 0px 3px 0px $colorDarker
+      text-shadow 0px 3px 0px $colorDark[1]
       font-weight bold
       font-family $font_sans
     h1
@@ -122,7 +122,7 @@ header
       animation-delay 1.78s
       stroke-dasharray 544
       stroke-dashoffset 544
-      stroke $colorLighter
+      stroke $colorLight[1]
     .LSHDW
       opacity 0
       fill 0
@@ -149,13 +149,13 @@ header
         top 0
         left 0
         border-radius 50%
-        background-color rgba($colorDarkest, 0.5)
+        background-color rgba($colorDark[0], 0.5)
         opacity 0
         transition 0.2s ease-out all
       b
         position relative
         top calc(128px / 2 - 1rem)
-        color $colorLight
+        color $colorLight[2]
         text-transform uppercase
       &:hover
         span
@@ -169,9 +169,9 @@ header
   width 3rem
   height 3rem
   border-radius 50%
-  background $colorDark
+  background $colorDark[2]
   box-shadow 0 0 10px 0 rgba(0, 0, 0, 0.11)
-  color $colorLight
+  color $colorLight[2]
   text-align center
   line-height 3rem
   opacity 0
@@ -203,8 +203,8 @@ header
 
 .splash-credit
   padding 0.5rem
-  color $colorLight
+  color $colorLight[2]
   text-align right
   opacity 0.8
   a
-    color $colorLight
+    color $colorLight[2]

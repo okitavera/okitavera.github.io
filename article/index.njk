@@ -3,7 +3,6 @@ layout: plain.njk
 permalink: /article/
 title: Article Index
 ---
-<div class="bg-lighter">
 <section class="container no-padding-y">
   <h1 class="text-thin center">
     <span class="text-bigger">ALL<b>ARTICLES</b></span>
@@ -15,10 +14,10 @@ title: Article Index
         <div class="container bg-blackprint static" {% if post.data.splash.url %}style="background-image: url({{ post.data.splash.url }});background-size: cover"{% endif %}>
           <div class="row items-mid {% if post.data.splash %}has-splash{% endif %}"><div class="col">
             <div class="sp sp-xs"></div>
-            <time class="hashed text-uppercase text-light" datetime="{{ post.date | htmlDateString }}">
+            <time class="hashed text-uppercase text-light-0" datetime="{{ post.date | htmlDateString }}">
               <b>{{ post.date | readableDate }}</b>
             </time>
-            <h1 class="text-light"><b>
+            <h1 class="text-light-0"><b>
                   {% if post.data.title %}
                     {{ post.data.title }}
                   {% else %}
@@ -33,4 +32,3 @@ title: Article Index
     {% endfor %}
   </div>
 </section>
-</div>

@@ -4,15 +4,15 @@
     <h1 class="text-thin"><b>RECENT</b>ARTICLES</h1>
     <div class="row fx-nowrap items-stretch">
       {% for post in articles | reverse %}
-      <div class="col col-eq card bg-lightest"><a href="{{ post.url | url }}">
-        <div class="card-thumbnail bg-darkest">
+      <div class="col col-eq card bg-light-0"><a href="{{ post.url | url }}">
+        <div class="card-thumbnail bg-dark-0">
         {% if post.data.splash.url %}
           <img class="---ll" data-src="{{ post.data.splash.url }}">
         {% endif %}
         </div>
         <div class="card-context">
           <time class="text-smaller" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-          <div class="text-dark">{{ post.data.title }}</div>
+          <div class="text-dark-2">{{ post.data.title }}</div>
         </div>
       </a></div>
       {% endfor %}
@@ -20,7 +20,7 @@
     <div class="row center">
       <div class="col">
         <div class="sp"></div>
-        <a href="/article/" class="button button-small text-light">View more post</a>
+        <a href="/article/" class="button button-small text-light-0">View more post</a>
         <div class="sp"></div>
       </div>
     </div>

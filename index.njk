@@ -1,6 +1,6 @@
 {% include "head.njk" %}
 {% set nav_class = "clears" %}
-<section class="start bg-darkest">
+<section class="start bg-dark-0">
   <div class="container height-stretch no-padding-x no-padding-y">
   {% include "navs.njk" %}
     <div class="row items-mid animated fadeIn">
@@ -9,13 +9,13 @@
           {% include 'comps/okitavera.min.svg' %}
         </figure>
         <h5 class="animated fadeInUp">
-          <b class="text-uppercase text-light">UX | kotlin & android dev | arch</b>
+          <b class="text-uppercase text-light-2">UX | kotlin & android dev | arch</b>
         </h5>
       </div>
     </div>
   </div>
 </section>
-<section class="welcome bg-accent text-light">
+<section class="welcome bg-accent text-light-0">
   <div class="container">
     <div class="row fx-nowrap items-mid">
       <div class="col center">
@@ -30,7 +30,7 @@
     </div>
   </div>
 </section>
-<section class="about bg-lightest" id="about">
+<section class="about bg-light-0" id="about">
   <div class="container">
     <div class="row fx-nowrap items-mid">
       <div class="col center side-padding">
@@ -49,7 +49,7 @@
   </div>
 <div class="sp"></div>
 </section>
-<section class="side-project-title bg-lighter" id="sideprojects">
+<section class="side-project-title bg-light-2" id="sideprojects">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -58,7 +58,7 @@
     </div>
     <div class="row items-stretch">
       {% for project in collections.projects %}
-      <div class="col col-eq side-padding card bg-darkest text-light">
+      <div class="col col-eq side-padding card bg-dark-0 text-light-0">
         <div class="card-thumbnail">
           <img class="---ll" data-src="{{ project.data.img }}">
         </div>

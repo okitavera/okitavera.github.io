@@ -6,16 +6,10 @@
  */
 $font_sans = Lato, 'Open Sans', 'Helvetica Neue', sans-serif
 $font_mono = Inconsolata, Menlo, monospace
-$colorAccent = #f0405a
-$colorLightest = #ffffff
-$colorLighter = lightness($colorLightest, 96%)
-$colorLight = lightness($colorLightest, 94%)
-$colorDark = lightness($colorLight, 43%)
-$colorDarker = lightness($colorLight, 30%)
-$colorDarkest = lightness($colorLight, 15%)
 $flexTreshold = 650px
 $paperMaxWidth = 950px
 $containerMaxWidth = 1100px
 
 @import 'fonts'
+@require 'colors'
 @import 'parts/*'
