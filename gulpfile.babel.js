@@ -2,7 +2,7 @@ import fs from "fs";
 import gulp from "gulp";
 import babel from "gulp-babel";
 import clean from "gulp-clean";
-import shell from "gulp-shell";
+import {spawn} from "child_process";
 import stylus from "gulp-stylus";
 
 // google site verification
@@ -27,8 +27,7 @@ const stylusbuild = () =>
     )
     .pipe(gulp.dest("modules/comps/"));
 
-const styluswatch = () =>
-  gulp.watch("assets/stylus/**", gulp.parallel(stylusbuild));
+const styluswatch = () => gulp.watch("assets/stylus/**", stylusbuild);
 
 const extasset = (repo, file) =>
   gulp.src(`node_modules/${repo}/${file}`).pipe(gulp.dest("build/assets/js"));
@@ -45,7 +44,7 @@ const nextjs = () =>
     .pipe(babel())
     .pipe(gulp.dest("build/assets/js"));
 
-const nextjswatch = () => gulp.watch("assets/js/**", gulp.parallel(nextjs));
+const nextjswatch = () => gulp.watch("assets/js/**", nextjs);
 
 const personal = (done) => {
   !fs.existsSync("build") && fs.mkdirSync("build");
@@ -60,16 +59,22 @@ const personal = (done) => {
 
 const prepareAssets = gulp.parallel(stylusbuild, personal, assets, nextjs);
 
+const eleventy = (options = "") => {
+  let cmd = (done) =>
+    spawn("eleventy", options.split(), {stdio: "inherit"}).on("close", (code) =>
+      done(code)
+    );
+  cmd.displayName = "eleventy" + options;
+  return cmd;
+};
+
 gulp.task(
   "serve",
-  gulp.parallel(
-    gulp.series(cleanup, prepareAssets, shell.task("eleventy --serve")),
-    styluswatch,
-    nextjswatch
+  gulp.series(
+    cleanup,
+    prepareAssets,
+    gulp.parallel(styluswatch, nextjswatch, eleventy("--serve"))
   )
 );
 
-gulp.task(
-  "default",
-  gulp.series(cleanup, prepareAssets, shell.task("eleventy"))
-);
+gulp.task("default", gulp.series(cleanup, prepareAssets, eleventy()));
