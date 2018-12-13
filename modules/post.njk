@@ -1,22 +1,32 @@
 {% set posttitle = title + ' - ' + metadata.title %}
 {% set disqus = "true" %}
-{% set nav_class = "clears" %}
 {% include "head.njk" %}
-<div class="bg-blackprint animated fadeIn" {% if splash.url %} style="background-image: url({{ splash.url }});background-size:cover" {% endif %}>
-<div {% if splash %}style="background-color:rgba(0,0,0,0.65)"{% endif %}>
-  {% include "navs.njk" %}
-  <section class="container">
-    <header class="row paper items-mid left">
+{% include "navs.njk" %}
+<div class="animated fadeIn" >
+<div>
+  <section class="container no-padding-y no-padding-x">
+    <div class="row paper paper-art">
+      <div class="col">
+          <div class="splash bg-blackprint">
+            {% if splash.url %}
+            <img width="100%" data-src="{{ splash.url }}" class="---ll"/>
+            {% endif %}
+          </div>
+          {% if splash.credit %}
+          <div class="splash-credit"><small>{{ splash.credit }}</small></div>
+          {% endif %}
+      </div>
+    </div>
+    <header class="row paper paper-title {% if not splash.url %}no-art{% endif %}">
       <div class="col animated zoomOut fast">
-        <time class="hashed text-light-0" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+        <time class="hashed" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
         <h1>{{ title }}</h1>
       </div>
     </header>
-    <div class="splash-credit"><small>{{ splash.credit }}</small></div>
   </section>
 </div></div>
-<section class="container no-padding-y">
-  <article class="paper">
+<section class="container no-padding-y no-padding-x">
+  <article class="paper paper-article">
     {{ content | safe }}
     <br>
     <small>
