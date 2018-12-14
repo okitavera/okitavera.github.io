@@ -1,26 +1,17 @@
 .article-index
-  .article-item
-    margin-bottom 2rem
-    .container
-      padding 0
-      background-color black
-      box-shadow 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08)
+  .row
+    justify-content center
+  .col
+    flex 0 1 30%
+    margin-bottom 1rem
+    background-color $colorLight[0]
+    &:hover
+      figure
+        opacity 0.7
+    figure
       transition 0.18s ease-out
-      &:hover
-        box-shadow 0 16px 35px 0 rgba(0, 0, 0, 0.27), 0 8px 20px 0 rgba(0, 0, 0, 0.15)
-        transform translateY(-1rem)
-    .row
-      padding 2rem 1rem
-      min-height 17rem
-      &:hover
-        transition 0.18s ease-out
-      &.has-splash
-        background-color rgba(black, 0.6)
-        &:hover
-          background-color rgba(black, 0.8)
-          transition 0.18s ease-out
-      *
-        text-shadow 0px 3px 0px $colorDark[1]
+    img
+      width 100%
 
 .owo
   padding 1rem

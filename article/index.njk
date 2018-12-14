@@ -3,32 +3,28 @@ layout: plain.njk
 permalink: /article/
 title: Article Index
 ---
-<section class="container no-padding-y">
-  <h1 class="text-thin center">
-    <span class="text-bigger">ALL<b>ARTICLES</b></span>
-  </h1>
-  <div class="article-index center">
-    {% set articles = collections.posts %}
-    {% for post in articles | reverse %}
-      <a href="{{ post.url | url }}"><article class="article-item bg-accent">
-        <div class="container bg-blackprint static" {% if post.data.splash.url %}style="background-image: url({{ post.data.splash.url }});background-size: cover"{% endif %}>
-          <div class="row items-mid {% if post.data.splash %}has-splash{% endif %}"><div class="col">
-            <div class="sp sp-xs"></div>
-            <time class="hashed text-uppercase text-light-0" datetime="{{ post.date | htmlDateString }}">
-              <b>{{ post.date | readableDate }}</b>
-            </time>
-            <h1 class="text-light-0"><b>
-                  {% if post.data.title %}
-                    {{ post.data.title }}
-                  {% else %}
-                    <code>{{ post.url }}</code>
-                  {% endif %}
-                </b></h1>
-            <div class="sp sp-xs"></div>
-          </div></div>
-        </div>
-      </article></a>
-      <div class="sp sp-xs"></div>
-    {% endfor %}
+{% set articles = collections.posts %}
+<section class="article-index">
+  <div class="container no-padding-y">
+    <h1 class="text-thin center">
+      <span class="text-bigger">ALL<b>ARTICLES</b></span>
+    </h1>
+    <div class="row">
+      {% for post in articles | reverse %}
+      <div class="col card">
+      <a href="{{ post.url | url }}">
+          {% if post.data.splash.url %}
+          <figure class="card-thumbnail bg-dark-0">
+            <img class="---ll" data-src="{{ post.data.splash.url }}">
+          </figure>
+          {% endif %}
+          <div class="card-context">
+            <time class="text-smaller" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <div class="text-dark-2">{{ post.data.title }}</div>
+          </div>
+      </a>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
