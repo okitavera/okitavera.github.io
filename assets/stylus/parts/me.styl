@@ -66,23 +66,22 @@
     overflow hidden
     padding 0 !important
     border-radius 13px 13px 0 0
-  .splash
-    margin 0
-    padding 0
-    line-height 0
-  .splash-credit
-    position relative
-    bottom 4rem
-    display block
-    text-align right
-    opacity 0.8
-    small
-      display inline-block
-      padding 0.5rem 2rem
-      background-color rgba(black, 0.5)
-      color $colorLight[1]
-    a
-      color $colorLight[1]
+    figure
+      margin 0
+      padding 0
+      img
+        display block
+      figcaption
+        display block
+        overflow hidden
+        padding 1rem
+        text-align right
+        text-overflow ellipsis
+        white-space pre
+        letter-spacing 1px
+        font-size 60%
+        a
+          color $colorDark[1]
   &.paper-title
     padding-bottom 0
     h1,
@@ -93,8 +92,7 @@
       font-weight bold
     h1
       max-width 90%
-      font-size 4em
-      font-size 5vw
+      font-size 4rem
       line-height 1.2
     time
       padding-left 0.1em
@@ -102,7 +100,8 @@
       padding-top 3rem
       border-radius 13px 13px 0 0
   &.paper-article
-    padding-bottom 0 !important
+    padding-top 1.5rem
+    padding-bottom 0
     border-radius 0 0 13px 13px
     h1,
     h2,
@@ -122,20 +121,29 @@
 @media screen and (max-width: $paperMaxWidth + 155px)
   .paper
     &.paper-art,
-    &.paper-title.no-art
-      border-radius 0
+    &.paper-title
+      &.no-art
+        border-radius 0
+      h1
+        font-size 3rem
 
 @media screen and (max-width: $flexTreshold + 200px)
   .paper
     padding 3rem
+    &.paper-title h1
+      font-size 2.5rem
 
 @media screen and (max-width: $flexTreshold + 100px)
   .paper
     padding 2rem
+    &.paper-title h1
+      font-size 2rem
 
 @media screen and (max-width: $flexTreshold)
   .paper
     padding 1rem
+    &.paper-title h1
+      font-size 1.7rem
 
 .ovlogo-canvas
   display block
@@ -225,14 +233,6 @@
       max-height auto
       width 100%
       height auto
-  header
-    &.paper
-      flex-direction row
-      h1
-        max-width 100%
-        font-size 4em
-        font-size 8vw
-        line-height 1.2
   .start
     .row
       flex-direction row

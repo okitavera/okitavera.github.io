@@ -7,14 +7,16 @@
   <section class="container no-padding-y no-padding-x">
     <div class="row paper paper-art">
       <div class="col">
-          <div class="splash bg-blackprint">
-            {% if splash.url %}
-            <img width="100%" data-src="{{ splash.url }}" class="---ll"/>
-            {% endif %}
-          </div>
-          {% if splash.credit %}
-          <div class="splash-credit"><small>{{ splash.credit }}</small></div>
+        {% if splash %}
+        <figure class="splash">
+          {% if splash.url %}
+          <img width="100%" data-src="{{ splash.url }}" class="---ll"/>
           {% endif %}
+          {% if splash.credit %}
+          <figcaption><span class="credit">{{ splash.credit }}</span></figcaption>
+          {% endif %}
+        </figure>
+        {% endif %}
       </div>
     </div>
     <header class="row paper paper-title {% if not splash.url %}no-art{% endif %}">
@@ -37,18 +39,18 @@
       {%- endif -%}
     {% endfor %}
     </small>
-  <hr/>
-  <footer class="post-credit-wrapper no-padding-y">
-    <img class="circle" width="64" src="{{ metadata.author.photo }}"/>
-    <div class="post-credit">
-      <h6>written by</h6>
-      <h3>{{ metadata.author.name }}</h3>
-    </div>
-  </footer>
-  {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
-  <hr>
-  <div id="disqus_thread"></div>
-  {% endif %}
+    <hr>
+    <footer class="post-credit-wrapper no-padding-y">
+      <img class="circle" width="64" src="{{ metadata.author.photo }}"/>
+      <div class="post-credit">
+        <h6>written by</h6>
+        <h3>{{ metadata.author.name }}</h3>
+      </div>
+    </footer>
+    <div class="sp"></div>
+    {% if metadata.disqus.username and metadata.disqus.enable == "true" %}
+    <div id="disqus_thread"></div>
+    {% endif %}
   <div class="sp"></div>
   </article>
 </section>
