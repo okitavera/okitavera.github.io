@@ -5,6 +5,8 @@ tags:
   - bash
   - linux
 layout: post.njk
+splash:
+  url: "/assets/img/articles/splashes/shebang.jpg"
 ---
 
 The `/bin/sh` is usually a symlink to the system default shell.

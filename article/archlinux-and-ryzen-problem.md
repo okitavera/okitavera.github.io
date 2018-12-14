@@ -6,6 +6,9 @@ tags:
   - linux
   - ryzen
 layout: post.njk
+splash:
+  url: "/assets/img/articles/splashes/arch-ryzen.jpg"
+  credit: "Image: AMD Ryzen and Arch Linux logo"
 ---
 
 Recently I bought an ryzen powered laptop, since my old laptop is completely broken, and it was not have a really good support on Windows because the AMD doesn't even give us the generic drivers for it. They're keeps talking about giving a support via OEM, and you know, it sucks and dissapointing.
