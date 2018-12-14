@@ -59,9 +59,9 @@
     <div class="row items-stretch">
       {% for project in collections.projects %}
       <div class="col col-eq side-padding card bg-dark-0 text-light-0">
-        <div class="card-thumbnail">
+        <figure class="card-thumbnail card-thumbnail-slim">
           <img class="---ll" data-src="{{ project.data.img }}">
-        </div>
+        </figure>
         <div class="card-context">
           <h3 class="text-thin no-margin-y text-uppercase">{{ project.data.name }}</h3>
           <span class="text-smaller">{{ project.data.desc }}</span>
