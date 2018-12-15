@@ -22,11 +22,13 @@ permalink: /article/tags/{{ tag }}/
     {% for post in articles | reverse %}
     <div class="col card">
     <a href="{{ post.url | url }}">
-        {% if post.data.splash.url %}
         <figure class="card-thumbnail bg-dark-0">
+        {% if post.data.splash.url %}
           <img class="---ll" data-src="{{ post.data.splash.url }}">
-        </figure>
+        {% else %}
+          <img class="---ll" data-src="/assets/img/book.svg" height="100%">
         {% endif %}
+        </figure>
         <div class="card-context">
           <time class="text-smaller" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
           <div class="text-dark-2">{{ post.data.title }}</div>
