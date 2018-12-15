@@ -1,9 +1,13 @@
 import fs from "fs";
+import {spawn} from "child_process";
 import gulp from "gulp";
 import babel from "gulp-babel";
 import clean from "gulp-clean";
-import {spawn} from "child_process";
 import stylus from "gulp-stylus";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
+import mqpacker from "css-mqpacker";
 
 // google site verification
 const ghash = "google9ab7bf08387cc375";
@@ -25,6 +29,7 @@ const stylusbuild = () =>
         compress: true
       })
     )
+    .pipe(postcss([autoprefixer, cssnano, mqpacker]))
     .pipe(gulp.dest("modules/comps/"));
 
 const styluswatch = () => gulp.watch("assets/stylus/**", stylusbuild);
