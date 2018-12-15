@@ -4,7 +4,6 @@ date: 2018-12-03
 tags:
   - zsh
   - linux
-layout: post.njk
 splash:
   url: "/assets/img/articles/splashes/zplug.jpg"
   credit: "Background from: https://unsplash.com/photos/7P8p1NBk37U"

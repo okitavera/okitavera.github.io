@@ -32,8 +32,12 @@ module.exports = (eleventy) => {
     return new URL(base).hostname;
   });
 
+  eleventy.addFilter("prettySlug", (slug) => {
+    return slug.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "");
+  });
+
   eleventy.addCollection("posts", (collection) => {
-    return collection.getFilteredByGlob("./article/*.md").sort((a, b) => {
+    return collection.getFilteredByGlob("./data/article/*.md").sort((a, b) => {
       return a.date - b.date;
     });
   });
@@ -70,7 +74,7 @@ module.exports = (eleventy) => {
   });
 
   eleventy.addCollection("projects", (collection) => {
-    return collection.getFilteredByGlob("./projects/*").sort((a, b) => {
+    return collection.getFilteredByGlob("./data/projects/*").sort((a, b) => {
       return a.date - b.date;
     });
   });
@@ -128,7 +132,7 @@ module.exports = (eleventy) => {
     dir: {
       input: ".",
       includes: "modules",
-      data: "manifest",
+      data: "data/manifest",
       output: "build"
     }
   };

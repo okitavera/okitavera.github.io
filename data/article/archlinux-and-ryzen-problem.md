@@ -5,7 +5,6 @@ tags:
   - archlinux
   - linux
   - ryzen
-layout: post.njk
 splash:
   url: "/assets/img/articles/splashes/arch-ryzen.jpg"
   credit: "Image: AMD Ryzen and Arch Linux logo"

@@ -5,7 +5,6 @@ tags:
   - npm
   - nodejs
   - web-development
-layout: post.njk
 splash:
   url: "/assets/img/articles/splashes/npm-install-user.jpg"
   credit: "Image: https://unsplash.com/photos/k03ornGON08"

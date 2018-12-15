@@ -4,7 +4,6 @@ date: 2018-11-28
 tags:
   - bash
   - linux
-layout: post.njk
 splash:
   url: "/assets/img/articles/splashes/shebang.jpg"
 ---
