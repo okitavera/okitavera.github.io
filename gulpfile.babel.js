@@ -10,7 +10,7 @@ const ghash = "google9ab7bf08387cc375";
 
 const cleanup = () =>
   gulp
-    .src(["build", "modules/comps/app.css"], {
+    .src(["build", "modules/comps/Illuminate.css"], {
       force: true,
       read: false,
       allowEmpty: true
@@ -19,7 +19,7 @@ const cleanup = () =>
 
 const stylusbuild = () =>
   gulp
-    .src("assets/stylus/app.styl")
+    .src("assets/stylus/Illuminate.styl")
     .pipe(
       stylus({
         compress: true
