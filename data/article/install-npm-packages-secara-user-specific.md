@@ -13,7 +13,7 @@ splash:
 Seperti yang kamu tau, secara default `npm install -g` akan menginstall packages secara global agar bisa dipakai tanpa harus masuk ke folder node project kamu, yang pasti sangat membantu sekali terutama pada packages yang mempunyai cli interfaces seperti `gulp`, `webpack`, `gylphhanger`, dan sejenisnya.
 
 Sayangnya, kamu harus menjalankan `npm` nya menggunakan root user, atau memakai `sudo` jika ingin menginstall packages secara global.
-Menurutku, itu sangatlah riskan, dimana `npm` mempunyai ratusan-ribu packages dan tidak menutup kemungkinan adanya ![malicious packages](https://www.google.com/search?q=npm+malicious+packages).
+Menurutku, itu sangatlah riskan, dimana `npm` mempunyai ratusan-ribu packages dan tidak menutup kemungkinan adanya [malicious packages](https://www.google.com/search?q=npm+malicious+packages).
 Dan juga, beberapa orang juga tidak suka mengetik sudo.
 
 > "typing sudo everytimes is freaking sucks!"

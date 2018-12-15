@@ -21,12 +21,15 @@
   {% endif %}
   <meta content="{{ splash.url or metadata.author.photo }}" property="og:image">
   <title>{{ posttitle or renderData.title or title or metadata.title }}</title>
-	<link rel="preload" href="/assets/fonts/woff2/lato.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/woff2/SourceSansPro-subset.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="{{ metadata.feed.title }}" href="{{ metadata.feed.path | url }}">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png">
   <style>
     {% include 'comps/Illuminate.css' %}
   </style>
+  <script>
+    {% include 'comps/thecompromise.js' %}
+	</script>
 </head>
 <body>
