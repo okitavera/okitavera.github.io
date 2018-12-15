@@ -2,26 +2,33 @@
   display flex !important
   flex-direction column
   margin 0 1rem 0 0
-  padding 0 !important
+  padding 0
   box-shadow 0 1px 5px $colorLight[3]
+  &:hover
+    .card-thumbnail
+      opacity 0.7
   &:last-child
     margin 0
   .card-thumbnail
+    position relative
     margin 0
     padding 0
+    padding-top (9 / 16) * 100% // maintaining aspect-ratio 16:9
     background-color $colorDark[3]
+    transition 0.18s ease-out
     img
-      position relative
+      position absolute
+      top 0
+      left 0
       display block
       width 100%
-      opacity 0.8
-  .card-context,
-  .card-footer
+  .card-context
     padding 1rem
   .card-footer
-    margin-top auto
+    margin-top auto // push to the bottom of parent
+    padding 1rem
     padding-top 0
 
 @media screen and (max-width: $flexTreshold)
   .card
-    margin 0 0 1rem
+    margin 0 0 1rem // transform card padding from right to the bottom
